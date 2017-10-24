@@ -5,7 +5,7 @@ highlighter:      rouge
 # Setup
 title:            Parker
 tagline:          'Develop from somewhere'
-description:      'To be lazy, More Diligent'
+description:      'To be Lazy, More Diligent'
 url:              https://github.com/qkrrudtjr954
 baseurl:          # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
@@ -34,4 +34,3 @@ sidebar_home_link:  true
                                 # set this to the root of the paginate_path
                                 # to enable a separate blog link.
 github:             https://github.com/qkrrudtjr954
-  repo:             https://github.com/fongandrew/hydeout
