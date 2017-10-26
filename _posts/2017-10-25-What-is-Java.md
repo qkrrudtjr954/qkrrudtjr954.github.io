@@ -9,21 +9,14 @@ tags:
   - Java compiler
 ---
 
-
-
-<br>
-<br>
-<br>
+Java 를 공부하기전 Java 가 어떤 특성을 가졌고, 어떤 환경에서 실행되는지 간략한 개요를 설명한다.
 
 ### Java 란?
 
 <p>
-
 가정용 단말기에 사용하려는 목적으로 만들어진 OAK언어에서 비롯 되었어 만들어진 가장 대표적인 객체 지향 언어이다.  현재 Java 언어는 앱개발, 웹개발 등 에서 사용되는 대표적인 프로그래밍 언어이다.
-
-[Java란?](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4))
-
 </p>
+[Java란?](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4))
 
 
 
@@ -71,17 +64,14 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
 
 자바 가상 머신(이하 JVM)은 운영체제가 _Java 컴파일러_ 에 의해 변환 된 자바 바이트 코드를 실행할 수 있도록 해주는 주체이다.
 
- JVM의 가장 큰 장점은 어떤 플랫폼(CPU, OS)에 상관없이 동일한 형태로 _자바 바이트 코드_를 실행할 수 있다는 점이다.
+ JVM의 가장 큰 장점은 어떤 플랫폼(CPU, OS)에 상관없이 동일한 형태로 _자바 바이트 코드_ 를 실행할 수 있다는 점이다.
 
 > JVM이 깔려 있다면 어떠한 컴퓨터 또는 어떠한 환경이든 상관없이 Java Byte Code (class 파일)를 실행할 수 있다.
-
-[자바 가상 머신이란?](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EA%B0%80%EC%83%81_%EB%A8%B8%EC%8B%A0)
-
 </p>
+[자바 가상 머신이란?](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EA%B0%80%EC%83%81_%EB%A8%B8%EC%8B%A0)
 
 ### Java 의 역사
 
-<p>
 
 1991년 6월 자바는 [제임스 고슬링](https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%9E%84%EC%8A%A4_%EA%B3%A0%EC%8A%AC%EB%A7%81)에 의해 탄생했다. 제임스 고슬링의 목표는 C/C++ 스타일의 언어와 가상 머신을 만드는 것이었다.
 
@@ -89,7 +79,6 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
 
 자바2의 출현으로 여러 플랫폼에서 사용할 수 있는 설정들이 만들어졌다.
 
-</p>
 
 + Java EE
   + **자바 플랫폼, 엔터프라이즈 에디션**

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: nopost
 title: Hello Hydeout
 excerpt_separator:  <!--more-->
 ---
