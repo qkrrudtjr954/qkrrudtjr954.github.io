@@ -9,13 +9,11 @@ tags:
   - Java compiler
 ---
 
----
-​	Java를 공부하기 전에, 과연 Java는 무엇이고, 어떤 특징을 갖고 있는지 확인해보고 Java 컴파일러, JVM 등에 대해 알아본다.
----
 
 
-
-
+<br>
+<br>
+<br>
 
 ### Java 란?
 
@@ -77,7 +75,7 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
 
 > JVM이 깔려 있다면 어떠한 컴퓨터 또는 어떠한 환경이든 상관없이 Java Byte Code (class 파일)를 실행할 수 있다.
 
-[자바 가상 머신이란?][https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EA%B0%80%EC%83%81_%EB%A8%B8%EC%8B%A0]
+[자바 가상 머신이란?](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_%EA%B0%80%EC%83%81_%EB%A8%B8%EC%8B%A0)
 
 </p>
 
@@ -85,7 +83,7 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
 
 <p>
 
-1991년 6월 자바는 [제임스 고슬링][https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%9E%84%EC%8A%A4_%EA%B3%A0%EC%8A%AC%EB%A7%81]에 의해 탄생했다. 제임스 고슬링의 목표는 C/C++ 스타일의 언어와 가상 머신을 만드는 것이었다.
+1991년 6월 자바는 [제임스 고슬링](https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%9E%84%EC%8A%A4_%EA%B3%A0%EC%8A%AC%EB%A7%81)에 의해 탄생했다. 제임스 고슬링의 목표는 C/C++ 스타일의 언어와 가상 머신을 만드는 것이었다.
 
 1995년에 자바 1.0이 공개되었고, *" Write Once, Run Anywhere "* 한번 만들면 어디서든 실행 가능하게 하겠다는 약속과 함께 인기 플랫폼에 무료 런타임을 제공하였다.
 
@@ -99,7 +97,7 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
   + PC에 동작하는 표준 플랫폼인 Java SE에 부가하여, 웹 애플케이션 서버에 기능을 추가한 서버를 위한 플랫폼
   + 명칭이 J2EE 에서 Java EE로 개정된
 + Java SE
-  + **자바 플랫폼 스탠더드 에디션 **
+  + **자바 플랫폼 스탠더드 에디션**
   + 데스크톱 및 서버, 최근 고사양 임베디드 시스템을 위한 표준 자바 플랫폼
 + Java ME
   + **자바 플랫폼, 마이크로 에디션**(Java Platform, Micro Edition)은 Java 2 Platform, Micro Edition
