@@ -1,9 +1,16 @@
-### Java 의 이해
-
+---
+layout: post
+title: "Java 의 이해"
+categories:
+  - Java
+tags:
+  - Java
+  - JVM
+  - Java compiler
 ---
 
+---
 ​	Java를 공부하기 전에, 과연 Java는 무엇이고, 어떤 특징을 갖고 있는지 확인해보고 Java 컴파일러, JVM 등에 대해 알아본다.
-
 ---
 
 
@@ -14,9 +21,9 @@
 
 <p>
 
-가정용 단말기에 사용하려는 목적으로 만들어진 OAK언어에서 비롯 되었어 만들어진 가장 대표적인 객체 지향 언어이다.  현재 Java 언어는 앱개발, 웹개발 등 에서 사용되는 대표적인 프로그래밍 언어이다. 
+가정용 단말기에 사용하려는 목적으로 만들어진 OAK언어에서 비롯 되었어 만들어진 가장 대표적인 객체 지향 언어이다.  현재 Java 언어는 앱개발, 웹개발 등 에서 사용되는 대표적인 프로그래밍 언어이다.
 
-[Java란?][https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4)]
+[Java란?](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4))
 
 </p>
 
@@ -66,7 +73,7 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
 
 자바 가상 머신(이하 JVM)은 운영체제가 _Java 컴파일러_ 에 의해 변환 된 자바 바이트 코드를 실행할 수 있도록 해주는 주체이다.
 
- JVM의 가장 큰 장점은 어떤 플랫폼(CPU, OS)에 상관없이 동일한 형태로 _자바 바이트 코드_를 실행할 수 있다는 점이다. 
+ JVM의 가장 큰 장점은 어떤 플랫폼(CPU, OS)에 상관없이 동일한 형태로 _자바 바이트 코드_를 실행할 수 있다는 점이다.
 
 > JVM이 깔려 있다면 어떠한 컴퓨터 또는 어떠한 환경이든 상관없이 Java Byte Code (class 파일)를 실행할 수 있다.
 
@@ -78,7 +85,7 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
 
 <p>
 
-1991년 6월 자바는 [제임스 고슬링][https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%9E%84%EC%8A%A4_%EA%B3%A0%EC%8A%AC%EB%A7%81]에 의해 탄생했다. 제임스 고슬링의 목표는 C/C++ 스타일의 언어와 가상 머신을 만드는 것이었다. 
+1991년 6월 자바는 [제임스 고슬링][https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%9E%84%EC%8A%A4_%EA%B3%A0%EC%8A%AC%EB%A7%81]에 의해 탄생했다. 제임스 고슬링의 목표는 C/C++ 스타일의 언어와 가상 머신을 만드는 것이었다.
 
 1995년에 자바 1.0이 공개되었고, *" Write Once, Run Anywhere "* 한번 만들면 어디서든 실행 가능하게 하겠다는 약속과 함께 인기 플랫폼에 무료 런타임을 제공하였다.
 
@@ -96,7 +103,7 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
   + 데스크톱 및 서버, 최근 고사양 임베디드 시스템을 위한 표준 자바 플랫폼
 + Java ME
   + **자바 플랫폼, 마이크로 에디션**(Java Platform, Micro Edition)은 Java 2 Platform, Micro Edition
-  + 자바 ME(Java ME) 혹은 **J2ME** 등으로도 널리 알려져 있다. 
+  + 자바 ME(Java ME) 혹은 **J2ME** 등으로도 널리 알려져 있다.
   + 제한된 자원을 가진 [휴대 전화](https://ko.wikipedia.org/wiki/%ED%9C%B4%EB%8C%80_%EC%A0%84%ED%99%94), [PDA](https://ko.wikipedia.org/wiki/PDA), [세트톱박스](https://ko.wikipedia.org/wiki/%EC%84%B8%ED%8A%B8%ED%86%B1%EB%B0%95%EC%8A%A4) 등에서 [Java 프로그래밍 언어](https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94_(%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4))를 지원하기 위해 만들어진 [플랫폼](https://ko.wikipedia.org/wiki/%EC%BB%B4%ED%93%A8%ED%8C%85_%ED%94%8C%EB%9E%AB%ED%8F%BC) 중 하나를 가리킨다.
 
 
@@ -104,4 +111,3 @@ Java 컴파일러를 거친 .java 파일은 .class 파일로 변환되어 컴퓨
 
 
  _Parker_	- 2017.10.25
-
