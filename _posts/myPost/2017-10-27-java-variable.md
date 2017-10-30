@@ -5,8 +5,8 @@ categories:
   - Java
 tags:
   - Java
-	- 변수
-	- variable
+  - 변수
+  - variable
 ---
 
 자바에서 사용하는 변수의 정의와 변수의 종류,변수를 사용하는 법 등을 배웁니다.
