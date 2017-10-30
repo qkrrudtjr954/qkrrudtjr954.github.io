@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scanner를 통한 input"
+title: "Scanner를 사용한 input"
 categories:
   - Java
 tags:
