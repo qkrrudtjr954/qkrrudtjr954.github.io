@@ -1,12 +1,10 @@
 ---
 layout: post
-title: "Java Main Method"
+title: "Java 의 Main Method"
 categories:
   - Java
 tags:
   - Java
-	- java
-	- main method
 ---
 
 프로그램을 개발하는데 있어서는 편하고 간편한 것이 최고라고 생각한다. 최근 [통합 개발 환경( 이하 IDE )](https://ko.wikipedia.org/wiki/%ED%86%B5%ED%95%A9_%EA%B0%9C%EB%B0%9C_%ED%99%98%EA%B2%BD) 들이 나날이 발전하면서 개발을 하기에 아주 편리한 시대가 되었다. <br>
