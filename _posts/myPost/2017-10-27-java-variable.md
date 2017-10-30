@@ -8,7 +8,7 @@ tags:
   - 변수
   - variable
 ---
-
+<br><br>
 자바에서 사용하는 변수의 정의와 변수의 종류,변수를 사용하는 법 등을 배웁니다.
 + 변수란 무엇인가
 + 변수의 종류
@@ -105,20 +105,25 @@ Ex)
 
 #### 정수형 변수의 선언과 사용
 ```java
-      byte by;		// 크기: 1byte == 8bit
+      byte by;		
+			// 크기: 1byte == 8bit
       by = 127;		
       System.out.println("by="+by);
 
-      short sh;     // 크기: 2byte == 16bit
+      short sh;     
+			// 크기: 2byte == 16bit
       sh = 1234;
       System.out.println("short="+sh);
 
-      int i;        // 크기: 4byte == 32bit
+      int i;        
+			// 크기: 4byte == 32bit
       i = 12341234;
       System.out.println("int="+i);
 
-      long l;       // 크기: 8byte == 64bit
-      l = 123412341234L;      // compiler 에게 long 타입임을 명시하기 위해 숫자 맨 뒤에 L을 붙인다.
+      long l;       
+			// 크기: 8byte == 64bit
+      l = 123412341234L;      
+			// compiler 에게 long 타입임을 명시하기 위해 숫자 맨 뒤에 L을 붙인다.
       System.out.println("long="+l);
 ```
 실행결과
@@ -133,11 +138,13 @@ Ex)
 
 #### 실수형 변수의 선언과 사용
 ```java
-      float f;      // 크기: 4byte == 32bit
+      float f;      
+			// 크기: 4byte == 32bit
       f = 123.456F;
       System.out.println("float="+f);
 
-      double d;      // 크기: 8byte == 64bit
+      double d;      
+			// 크기: 8byte == 64bit
       d = 123.4561234;
       System.out.println("double="+d);
 ```
@@ -152,7 +159,8 @@ Ex)
 
 #### 문자형 변수의 선언과 사용
 ```java
-      char ch;      // 크기: 2byte == 16bit
+      char ch;      
+			// 크기: 2byte == 16bit
       ch = 'a';
       ch = '한';
       System.out.println("char="+ch);
@@ -180,7 +188,8 @@ Ex)
 #### 참/거짓, boolean타입 변수의 선언과 사용
 ```java
       //참/거짓
-      boolean b;      // 크기: 1byte == 8bit
+      boolean b;      
+			// 크기: 1byte == 8bit
       b = true;
       System.out.println("b="+b);
 

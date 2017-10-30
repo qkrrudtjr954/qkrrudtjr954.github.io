@@ -5,9 +5,9 @@ categories:
   - Java
 tags:
   - Java
-	- input
-	- Scanner
-	- java.util.Scanner
+  - input
+  - Scanner
+  - java.util.Scanner
 ---
 
 자바 콘솔에서 입력을 변수의 데이터 타입별로 입력을 받은 후, 변수에 저장하고 콘솔에 출력하는 방법까지 과정을 학습합니다.
