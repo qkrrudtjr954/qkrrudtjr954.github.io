@@ -7,6 +7,11 @@ tags:
   - Java
 ---
 
+자바 프로젝트를 실행하면 항상 만나게 되는 자바의 main method에 대해 학습합니다.<br>
+main method가 어떻게 구성되어 있는지 학습합니다.
+
+
+
 프로그램을 개발하는데 있어서는 편하고 간편한 것이 최고라고 생각한다. 최근 [통합 개발 환경( 이하 IDE )](https://ko.wikipedia.org/wiki/%ED%86%B5%ED%95%A9_%EA%B0%9C%EB%B0%9C_%ED%99%98%EA%B2%BD) 들이 나날이 발전하면서 개발을 하기에 아주 편리한 시대가 되었다. <br>
 [intellij](https://www.jetbrains.com/idea/) , [Eclipse](https://www.eclipse.org/) 와 같은 대표적인 IDE 들을 사용하면 자바 프로그램을 더 쉽고 간편하게 이용할 수 있다.
 
