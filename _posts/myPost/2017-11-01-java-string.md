@@ -67,7 +67,7 @@ Str2: Hello World!
 
 위 방법들 처럼 ```String```을 선언하는 방법은 여러가지가 있고 모두 다 정상 동작한다.
 
-하지만, 제일 처음 ***일반 변수처럼 선언하여 사용하는 방법***이 가장 많이 쓰이는 방법이다.
+하지만, 제일 처음 ***일반 변수처럼 선언하여 사용하는 방법*** 이 가장 많이 쓰이는 방법이다.
 
 
 
@@ -127,11 +127,11 @@ class numCombineString{
   }
 ```
 
- ```
+```
 Hi! I'm 20 years old.
 Hi! I'm 204 years old.		//연산이 진행되지 않고 문자열로 합쳐진다.
 Hi! I'm 24 years old.		//연산이 제대로 진행된다.
- ```
+```
 
 문자열 사이에 연산을 하고 싶을때는 소괄호() 가 반드시 들어가야 한다. 그렇지 않으면 문자열로 인식되어 단순히 문자만 합해진 결과가 나온다.
 
@@ -234,11 +234,11 @@ class indexOfClass{
 
 ```java
 class lengthClass{
-    public static void main(String[] args){
-	    String str = "Hello world!";
-        int strLen = str.length();
-	    System.out.println("Length: "+strLen);
-    }
+  public static void main(String[] args){
+    String str = "Hello world!";
+    int strLen = str.length();
+    System.out.println("Length: "+strLen);
+  }
 }
 ```
 
@@ -261,75 +261,76 @@ class stringFunctionClass
    public static void main(String[] args)
    {
       //replace()
-        //첫번째 인자는 대상 문자열이 오고, 두번째 인자에는 바꾸려하는 문자열이 온다.
-        String str1 = "A*B*C*D*E*F*G*H";
-        String temp = str1.replace("*", "-");
-        System.out.println("replace\t:"+temp);
+      //첫번째 인자는 대상 문자열이 오고, 두번째 인자에는 바꾸려하는 문자열이 온다.
+      String str1 = "A*B*C*D*E*F*G*H";
+      String temp = str1.replace("*", "-");
+      System.out.println("replace\t:"+temp);
 
-        //split() tokken 을 사용해서 문자열을 자르고 char[]로 반환된다.
-        //tokken은 구별이 가는 특정 문자이다. (*,&,^,% ... 등등)
-        String str2 = "hello world this is java, and hello world";
-        String charArr[] = str2.split(" ");
-        for(int k=0; k<charArr.length; k++){
-            System.out.println("split\t:"+charArr[k]);
-        }
+      //split() tokken 을 사용해서 문자열을 자르고 char[]로 반환된다.
+      //tokken은 구별이 가는 특정 문자이다. (*,&,^,% ... 등등)
+      String str2 = "hello world this is java, and hello world";
+      String charArr[] = str2.split(" ");
+      for(int k=0; k<charArr.length; k++){
+          System.out.println("split\t:"+charArr[k]);
+      }
 
-        //substring() -> 범위내 문자를 잘라서 가져옴 (시작 위치, 종료 위치 전)
-        String str3 = "Hello World!!";
-        String tempStr = str3.substring(2, 5);
-        System.out.println("substring\t:"+tempStr);
+      //substring() -> 범위내 문자를 잘라서 가져옴 (시작 위치, 종료 위치 전)
+      String str3 = "Hello World!!";
+      String tempStr = str3.substring(2, 5);
+      System.out.println("substring\t:"+tempStr);
 
-        //toUpeerCase() 모든 영문자를 대문자로 변환한다.
-        //toLowerCase() 모든 영문자를 소문자로 변환한다.
-        String tempStr1 = str3.toUpperCase();
-        String tempStr2 = str3.toLowerCase();
-        System.out.println("toUpperCase()\t:"+ tempStr1);
-        System.out.println("toLowerCase()\t:"+ tempStr2);
+      //toUpeerCase() 모든 영문자를 대문자로 변환한다.
+      //toLowerCase() 모든 영문자를 소문자로 변환한다.
+      String tempStr1 = str3.toUpperCase();
+      String tempStr2 = str3.toLowerCase();
+      System.out.println("toUpperCase()\t:"+ tempStr1);
+      System.out.println("toLowerCase()\t:"+ tempStr2);
 
-        //toString() 특정 자료형을 문자로 변환한다. (Wrapper Class에서 주로 사용된다.)
-        String str4 = "안녕하세요, 반가워요";
-        System.out.println("toString():\t"+str4.toString());
+      //toString() 특정 자료형을 문자로 변환한다. (Wrapper Class에서 주로 사용된다.)
+      String str4 = "안녕하세요, 반가워요";
+      System.out.println("toString():\t"+str4.toString());
 
-        //trim() 문자열 앞과 뒤의 공백을 없애준다. (앞과 뒤만 없애줌)
-        String str5 ="         Hello          World        !!!           ";
-        System.out.println("trim()\t: "+str5+"(before)");
-        String trimStr = str5.trim();
-        System.out.println("trim()\t: "+trimStr+"(after)");
+      //trim() 문자열 앞과 뒤의 공백을 없애준다. (앞과 뒤만 없애줌)
+      String str5 ="         Hello          World        !!!           ";
+      System.out.println("trim()\t: "+str5+"(before)");
+      String trimStr = str5.trim();
+      System.out.println("trim()\t: "+trimStr+"(after)");
 
-        //valueOf() 특정 타입의 값을 문자열로 변환해준다.
+      //valueOf() 특정 타입의 값을 문자열로 변환해준다.
 
-        int num= 123;
-        long lo = 1241323412L;
-        double dou = 123.45678;
-        //아래 모든 출력은 연산을 하는 것이 아니라 문자열의 합을 실행한다.
-        String iStr = String.valueOf(num);
-        System.out.println("valueOf()\t:"+iStr + 1000000);
-        String lStr = String.valueOf(lo);
-        System.out.println("valueOf()\t:"+lStr + 1000000);
-        String dStr = String.valueOf(dou);
-        System.out.println("valueOf()\t:"+dStr + 1000000);
+      int num= 123;
+      long lo = 1241323412L;
+      double dou = 123.45678;
+      //아래 모든 출력은 연산을 하는 것이 아니라 문자열의 합을 실행한다.
+      String iStr = String.valueOf(num);
+      System.out.println("valueOf()\t:"+iStr + 1000000);
+      String lStr = String.valueOf(lo);
+      System.out.println("valueOf()\t:"+lStr + 1000000);
+      String dStr = String.valueOf(dou);
+      System.out.println("valueOf()\t:"+dStr + 1000000);
 
 
-        //contains() 해당 문자를 포함하고 있는지 여부를 검사한다.
-        String str6 = "서울시 강남구";
-        String findStr = "서울";
-        boolean b1 = str6.contains(findStr);
-        System.out.println("contains()\t:"+b1);
+      //contains() 해당 문자를 포함하고 있는지 여부를 검사한다.
+      String str6 = "서울시 강남구";
+      String findStr = "서울";
+      boolean b1 = str6.contains(findStr);
+      System.out.println("contains()\t:"+b1);
 
-        //charAt 문자열의 해당위치의 문자를 char 타입으로 반환한다.
-        String str7 = "가나다라마바사아자차카타파하";
-        System.out.println("charAt()\t:"+str7.charAt(3));
+      //charAt 문자열의 해당위치의 문자를 char 타입으로 반환한다.
+      String str7 = "가나다라마바사아자차카타파하";
+      System.out.println("charAt()\t:"+str7.charAt(3));
 
-        //concat 문자열을 합친다. +와 같은 동작
-        String str8 = "hello world!!!!";
-        String conStr = "Bye Hello world!!!";
-        System.out.print("concat()\t:");
-        System.out.println(str8.concat(conStr));
+      //concat 문자열을 합친다. +와 같은 동작
+      String str8 = "hello world!!!!";
+      String conStr = "Bye Hello world!!!";
+      System.out.print("concat()\t:");
+      System.out.println(str8.concat(conStr));
    }
 }
 ```
 
-```A-B-C-D-E-F-G-H
+```
+A-B-C-D-E-F-G-H
 replace	:A-B-C-D-E-F-G-H
 split	:hello
 split	:world
