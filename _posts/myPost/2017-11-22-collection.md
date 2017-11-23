@@ -31,11 +31,11 @@ HelloClass arr[] = new HelloClass[100];
 
 <br>
 <br>
+
+
 ## Collection
 
 ```Collection```은 ```java.util.Collection``` 배열의 이런 한계점을 극복하고 더 발전된 방식으로 데이터를 저장할 수 있는 클래스의 모음이다.
-
-###
 
 ### 1. ArrayList (배열 리스트)
 
@@ -56,9 +56,9 @@ HelloClass arr[] = new HelloClass[100];
 - key + value 구조로 관리된다.
 - Tree 구조를 갖는다.
   <pre>
-    0
-   / \
-  0   0
+      0
+     / \
+    0   0
    /\   /\
   0  0 0  0
   </pre>
