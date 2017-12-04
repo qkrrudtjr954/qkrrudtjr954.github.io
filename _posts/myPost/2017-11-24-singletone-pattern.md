@@ -2,7 +2,7 @@
 layout: post
 title: "Singleton Pattern 싱글톤 패턴"
 categories:
-  - Java
+  - Design Pattern
 tags:
   - Java
   - Singleton Pattern
