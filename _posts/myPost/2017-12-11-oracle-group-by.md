@@ -82,9 +82,14 @@ SELECT JOB_ID, COUNT(*), SUM(SALARY), AVG(SALARY)
 FROM EMPLOYEES
 WHERE JOB_ID = 'IT_PROG';
 ```
-JOB_ID| COUNT( * ) | SUM(SALARY)| AVG(SALARY)|
-|:----:|:----:|:----:|:----:|
-|IT_PROG| 5| 28800|5760|
+
+
+| JOB_ID | COUNT( * ) | SUM(SALARY) | AVG(SALARY) |
+|:------:|:----------:|:-----------:|:-----------:|
+| IT_PROG|           5|        28800|         5760|
+
+
+
 하지만 다른 직업에 대한 정보를 모두 비교하고 싶을 때, 위 코드는 효율이 높은 편이 아니다.
 이때, 각 직업별로 정보를 묶어야하기 때문에 ```group by```를 사용한다.
 
@@ -96,7 +101,9 @@ SELECT COUNT(*), SUM(SALARY), AVG(SALARY)
 FROM EMPLOYEES
 GROUP BY JOB_ID;
 ```
-JOB_ID| COUNT( * ) | SUM(SALARY)| AVG(SALARY)|
+
+
+|JOB_ID| COUNT( * ) | SUM(SALARY)| AVG(SALARY)|
 |:----:|:----:|:----:|:----:|
 |IT_PROG| 5| 28800|5760|
 |AC_MGR| 1| 12008|12008|
@@ -104,6 +111,8 @@ JOB_ID| COUNT( * ) | SUM(SALARY)| AVG(SALARY)|
 |ST_MAN| 6| 36400|7280|
 |PU_MAN| 1| 11000|11000|
 |AD_ASST| 2| 34000|17000|
+
+
 
 <br>
 
