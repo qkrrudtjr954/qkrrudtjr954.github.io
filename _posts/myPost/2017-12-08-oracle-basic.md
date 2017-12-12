@@ -27,10 +27,10 @@ tags:
     <th>컬럼</th>
   </tr>
   <tr>
-    <td colspan=4>로우( 컬럼의 속성을 갖는다 )</td>
+    <td colspan="4">로우( 컬럼의 속성을 갖는다 )</td>
   </tr>
   <tr>
-    <td colspan=4>로우( 컬럼의 속성을 갖는다 )</td>
+    <td colspan="4">로우( 컬럼의 속성을 갖는다 )</td>
   </tr>
 </table>
 
@@ -86,8 +86,9 @@ INSERT INTO ( COL_VARCHAR2, COL_NUMBER1, COL_NUMBER2, COL_DATE )
 VALUES ( 'HELLO', 100, 200.444, SYSDATE );
 ```
 **삽입 결과**
+
 | COL_VARCHAR2 | COL_NUMBER1     | COL_NUMBER2     | COL_DATE     |
-| :----------- | :-------------- | :------------- | :------------- |
+| :-----------: | :--------------: | :-------------: | :-------------: |
 | HELLO       | 100       | 200.44 | 17/12/08 |
 
 - SYSDATE 는 현재의 날짜를 삽입한다.
@@ -110,8 +111,10 @@ SELECT * FROM TB_SAMPLE;
  * <span> * </span> 대신 원하는 컬럼 이름을 넣으면 해당 컬럼만 출력된다.
 
 **TB_SAMPLE**
+
+
 | COL_VARCHAR2 | COL_NUMBER1     | COL_NUMBER2     | COL_DATE     |
-| :------------- | :------------- | :------------- | :------------- |
+| :-----------: | :--------------: | :-------------: | :-------------: |
 | HELLO       | 100       | 200.44 | 17/12/08 |
 
 <br>
@@ -163,7 +166,7 @@ CREATE TABLE EMP (
 
 #### QUERY
 
-```SQL
+```sql
 -- * : 테이블의 모든 컬럼을 표시한다.
 -- EMP 테이블의 모든 DATA 출력
 SELECT * FROM EMP;  
@@ -179,10 +182,16 @@ SELECT ENAME, SAL, SAL*12 FROM EMP;
 
 <BR>
 
-```SQL
+```sql
 -- 주석
 /* 범위 주석 */
+```
+- ```--``` 는 한줄 주석
+- ```/* */``` 는 범위 주석을 의미한다.
 
+<br>
+
+```sql
 /* ALIAS : 별명 (대소문자 구분이 없다) */
 SELECT SAL*12 연봉 FROM EMP;
 ```
@@ -191,7 +200,7 @@ SELECT SAL*12 연봉 FROM EMP;
 
 <BR>
 
-```SQL
+```sql
 -- 연결 연산자 : 열이나 문자열을 다른 열에 연결
 SELECT ENAME || ' HAS $ ' || SAL FROM EMP;
 -- ENAME HAS $SAL 의 형태로 데이터를 출력한다.
@@ -206,7 +215,7 @@ SELECT ENAME || COMM FROM EMP;
 
 <BR>
 
-```SQL
+```sql
 -- DISTINCT : 중복행을 삭제해준다.
 SELECT DISTINCT DEPTNO FROM EMP;
 ```
@@ -215,7 +224,7 @@ SELECT DISTINCT DEPTNO FROM EMP;
 
 <BR>
 
-```SQL
+```sql
 -- 테이블 구조 표시
 DESCRIBE EMP;
 DESC EMP;
@@ -226,7 +235,7 @@ DESC EMP;
 <BR><BR>
 
 #### 연습 문제
-```SQL
+```sql
 -- 1 BUN
 -- EMP 테이블에서 사원번호, 사원 이름, 월급을 출력하세요
 SELECT EMPNO, ENAME, SAL FROM EMP;
