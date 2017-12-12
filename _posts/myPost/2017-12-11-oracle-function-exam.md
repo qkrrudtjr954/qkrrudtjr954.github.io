@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[ORACLE] 문제 풀이"
+title: "[ORACLE] 기본 함수 문제 풀이"
 categories:
   - Data Base
 tags:
