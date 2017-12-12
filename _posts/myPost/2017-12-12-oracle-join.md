@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[ORACLE] 데이터 베이스의 정렬"
+title: "[ORACLE] 데이터 베이스의 조인"
 categories:
   - Data Base
 tags:
@@ -11,10 +11,12 @@ tags:
 ---
 
 
+
 조인은 데이터 베이스의 여러 테이블에서 원하는 값을 한번에 조회하기 위해 사용하는 방법이다.
 조인은 테이블과 테이블을 붙여(join) 원하는 결과를 만들어낼 수 있다.
 서로다른 테이블의 상관 관계를 찾아 로우를 연결한다.
 
+<br>
 
 ## JOIN의 종류
 - INNER JOIN
