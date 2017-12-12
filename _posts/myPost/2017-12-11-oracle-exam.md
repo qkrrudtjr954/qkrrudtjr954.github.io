@@ -1,0 +1,230 @@
+---
+layout: post
+title: "[ORACLE] 문제 풀이"
+categories:
+  - Data Base
+tags:
+  - Java
+  - Data Base
+  - DB
+  - ORACLE
+---
+
+```sql
+/*
+문제1) EMPLOYEES 테이블에서 King의 정보를 소문자로 검색하고
+사원번호,성명, 담당업무(소문자로),부서번호를 출력하라.
+*/
+SELECT EMPLOYEE_ID, LAST_NAME, LOWER(JOB_ID), DEPARTMENT_ID
+FROM EMPLOYEES
+WHERE LOWER(LAST_NAME)='king';
+
+
+/*
+문제2) EMPLOYEES 테이블에서 King의 정보를 대문자로 검색하고 사원번호,
+성명, 담당업무(대문자로),부서번호를 출력하라.
+*/
+SELECT EMPLOYEE_ID, LAST_NAME, UPPER(JOB_ID), DEPARTMENT_ID
+FROM EMPLOYEES
+WHERE UPPER(LAST_NAME)='KING';
+
+/*
+문제3) DEPARTMENTS 테이블에서 부서번호와 부서이름, 부서이름과 위치번호를 합하여 출력하도록 하라.
+*/
+DESC DEPARTMENTS;
+SELECT DEPARTMENT_ID || DEPARTMENT_NAME || LOCATION_ID
+FROM DEPARTMENTS;
+
+SELECT CONCAT(DEPARTMENT_ID, CONCAT(DEPARTMENT_NAME, LOCATION_ID))
+FROM DEPARTMENTS;
+
+/*
+문제4) EMPLOYEES 테이블에서 이름의 첫 글자가 ‘K’ 보다 크고 ‘Y’보다 적은 사원의 정보를
+사원번호, 이름, 업무, 급여, 부서번호를 출력하라.
+단 이름순으로 정렬하여라.
+*/
+DESC EMPLOYEES;
+SELECT EMPLOYEE_ID, LAST_NAME, JOB_ID, SALARY, DEPARTMENT_ID
+FROM EMPLOYEES
+WHERE (LAST_NAME >= 'L%' AND LAST_NAME <=  'X%')
+ORDER BY LAST_NAME;
+
+
+/*
+문제5) EMPLOYEES 테이블에서 20번 부서 중  이름의 길이 및 급여의 자릿수를
+사원번호, 이름, 이름의 자릿수, 급여, 급여의 자릿수를 출력하라.
+*/
+DESC EMPLOYEES;
+SELECT DEPARTMENT_ID, EMPLOYEE_ID, FIRST_NAME, LENGTH(FIRST_NAME) NAME_LENGTH, SALARY, LENGTH(SALARY) SAL_LENGTH
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID = 20;
+
+/*
+문제6) EMPLOYEES 테이블에서 이름 중 ‘e’자의 위치를 출력하라.
+*/
+SELECT LAST_NAME, INSTR(UPPER(LAST_NAME), 'E') LOCA
+FROM EMPLOYEES;
+
+/*
+문제7) 다음의 쿼리를 실행하고 결과를 분석하라.
+ROUND( 숫자, 소수점 자리)
+*/
+SELECT ROUND(4567.678), ROUND(4567.678, 0),
+    ROUND(4567.678, 2), ROUND(4567.678, -2)
+FROM DUAL;
+
+/*
+문제8) EMPLOYEES 테이블에서 부서번호가 80인 사람의 급여를
+30으로 나눈 나머지를 구하여 출력하라.
+*/
+SELECT SALARY, MOD(SALARY, 30), FLOOR(SALARY/30), DEPARTMENT_ID
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID=80;
+
+
+/*
+문제9) EMPLOYEES 테이블에서 30번 부서 중 이름과 담당 업무를 연결하여 출력하여라.
+단 담당 업무를 한 줄 아래로 출력하라.
+보이기엔 한줄처럼 보이지만 그리드를 더블 클릭하면 개행 되었다는 것을
+확인할 수 있습니다.
+*/
+SELECT EMPLOYEE_ID || LAST_NAME || CHR(10) || JOB_ID
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID=30;
+
+/*
+문제10) EMPLOYEES 테이블에서 현재까지 근무일 수가 몇주 몇일 인가를 출력하여라.
+단 근무 일수가 많은 사람 순으로 출력하여라.
+*/
+DESC EMPLOYEES;
+
+SELECT
+    FLOOR(TO_DATE(20150619, 'YYYYMMDD') - TO_DATE(HIRE_DATE)) TOTAL,
+    FLOOR(FLOOR(TO_DATE(20150619, 'YYYYMMDD') - TO_DATE(HIRE_DATE)) / 7) WEEKS,
+    MOD(FLOOR(TO_DATE(20150619, 'YYYYMMDD') - TO_DATE(HIRE_DATE)), 7) DAYS
+FROM EMPLOYEES
+ORDER BY HIRE_DATE;
+
+
+/*
+문제11) EMPLOYEES 테이블에서 부서 50에서 급여 앞에 $를 삽입하고 3자리마다 ,를 출력하라
+*/
+SELECT LAST_NAME, '$' || TO_CHAR(SALARY, '999,999,999') SAL
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID =80;
+
+
+/* GROUP BY */
+
+/*
+문제1) EMPLOYEES 테이블에서 모든 SALESMAN(SA_MAN)에 대하여
+급여의 평균, 최고액, 최저액, 합계를 구하여 출력하여라.
+*/
+DESC EMPLOYEES;
+SELECT * FROM EMPLOYEES;
+
+SELECT JOB_ID, AVG(SALARY), MAX(SALARY), MIN(SALARY), SUM(SALARY)
+FROM EMPLOYEES
+GROUP BY JOB_ID
+HAVING JOB_ID='SA_MAN'
+ORDER BY JOB_ID;
+
+/*
+문제2) EMPLOYEES 테이블에 등록되어 있는
+인원수, 보너스가 NULL이 아닌 인원수, 보너스의 평균, 등록되어 있는 부서의 수를 구하여 출력하라.
+*/
+DESC EMPLOYEES;
+SELECT COUNT(*) FROM EMPLOYEES;
+SELECT COUNT(*) FROM EMPLOYEES WHERE COMMISSION_PCT IS NOT NULL;
+SELECT AVG(SALARY*COMMISSION_PCT) FROM EMPLOYEES;
+SELECT COUNT(DISTINCT DEPARTMENT_ID) FROM EMPLOYEES;
+
+SELECT
+    COUNT(*),
+    COUNT(COMMISSION_PCT),
+    AVG(SALARY*COMMISSION_PCT),
+    COUNT(DISTINCT JOB_ID)
+FROM EMPLOYEES;
+
+/*
+문제3) EMPLOYEES 테이블에서 부서별로 인원수, 평균 급여, 최저급여, 최고 급여, 급여의 합을 구하여 출력하라.
+*/
+
+SELECT
+    DEPARTMENT_ID,
+    COUNT(*),
+    AVG(SALARY),
+    MIN(SALARY),
+    MAX(SALARY),
+    SUM(SALARY)
+FROM EMPLOYEES
+GROUP BY DEPARTMENT_ID
+ORDER BY DEPARTMENT_ID NULLS FIRST;
+
+
+/*
+문제4) EMPLOYEES 테이블에서 각 부서별로 인원수,급여의 평균, 최저 급여, 최고 급여, 급여의 합을 구하여 급여의 합이 많은 순으로 출력하여라.
+*/
+SELECT
+    DEPARTMENT_ID,
+    COUNT(*),
+    AVG(SALARY),
+    MIN(SALARY),
+    MAX(SALARY),
+    SUM(SALARY) AS SUMMA
+FROM EMPLOYEES
+GROUP BY DEPARTMENT_ID
+ORDER BY SUMMA DESC NULLS LAST;
+
+
+/*
+문제5) EMPLOYEES 테이블에서 부서별, 업무별 그룹하여 결과를
+부서번호, 업무, 인원수, 급여의 평균, 급여의 합을 구하여 출력하여라.
+*/
+SELECT
+    DEPARTMENT_ID,
+    JOB_ID,
+    COUNT(*),
+    AVG(SALARY),
+    SUM(SALARY)
+FROM EMPLOYEES
+GROUP BY DEPARTMENT_ID, JOB_ID;
+
+/*
+문제6) EMPLOYEES 테이블에서 부서 인원이 4명보다 많은 부서의
+부서번호, 인원수, 급여의 합을 구하여 출력하여라.(GROUP BY, HAVING)
+*/
+SELECT DEPARTMENT_ID, COUNT(*), SUM(SALARY)
+FROM EMPLOYEES
+GROUP BY DEPARTMENT_ID
+HAVING COUNT(*) > 4;
+
+/*
+문제7) EMPLOYEES 테이블에서 급여가 최대 10000이상인 부서에 대해서
+부서번호, 평균 급여, 급여의 합을 구하여 출력하여라.
+*/
+SELECT DEPARTMENT_ID, AVG(SALARY), SUM(SALARY)
+FROM EMPLOYEES
+GROUP BY DEPARTMENT_ID
+HAVING SUM(SALARY) > 10000;
+
+/*
+문제8) EMPLOYEES 테이블에서 업무별 급여의 평균이 10000 이상인 업무에 대해서
+업무명,평균 급여, 급여의 합을 구하여 출력하라.
+*/
+SELECT JOB_ID, AVG(SALARY), SUM(SALARY)
+FROM EMPLOYEES
+GROUP BY JOB_ID
+HAVING AVG(SALARY) > 10000;
+
+
+/*
+문제9) EMPLOYEES 테이블에서 전체 월급이 10000을 초과하는 각 업무에 대해서
+업무와 월급여 합계를 출력하라. 단 판매원은 제외하고 월 급여 합계로 정렬(내림차순)하라.(SA_)
+*/
+SELECT JOB_ID, SUM(SALARY) AS SUMA
+FROM EMPLOYEES
+GROUP BY JOB_ID
+HAVING SUM(SALARY) > 10000 AND JOB_ID NOT LIKE 'SA_%'
+ORDER BY SUMA DESC;
+```
