@@ -4,7 +4,6 @@ title: "[ORACLE] 데이터 베이스의 그룹화"
 categories:
   - Data Base
 tags:
-  - Java
   - Data Base
   - DB
   - ORACLE

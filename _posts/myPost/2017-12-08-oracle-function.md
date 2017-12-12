@@ -4,7 +4,6 @@ title: "[ORACLE] 데이터 베이스의 기본 함수"
 categories:
   - Data Base
 tags:
-  - Java
   - Data Base
   - DB
   - ORACLE

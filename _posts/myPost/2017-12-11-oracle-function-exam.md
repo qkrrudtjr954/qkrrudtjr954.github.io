@@ -4,7 +4,6 @@ title: "[ORACLE] 기본 함수 문제 풀이"
 categories:
   - Data Base
 tags:
-  - Java
   - Data Base
   - DB
   - ORACLE
