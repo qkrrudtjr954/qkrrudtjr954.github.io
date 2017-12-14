@@ -1,0 +1,287 @@
+---
+layout: post
+title: "[ORACLE] DB의 서브 쿼리 문제 풀이"
+categories:
+  - Data Base
+tags:
+  - Data Base
+  - DB
+  - ORACLE
+---
+
+서브 쿼리를 사용한 예제 풀이
+예제에 사용된 테이블은 오라클에서 기본으로 제공하는 테이블을 사용합니다.
+
+
+<br>
+<br>
+
+##### 각 사원의 이름을 표시하고 근무 달 수 (입사일로부터 현재까지의 달수)를 게산하여 열레이블을 MONTHS_WORKED로 지정하시오. 결과는 정수로 반올림하여 표시하고 근무달 수를 기준으로 오름차순으로 정렬하세요
+
+```sql
+SELECT ENAME, ROUND(MONTHS_BETWEEN(SYSDATE, HIREDATE)) "MONTHS_WORKED"
+FROM EMP
+ORDER BY MONTHS_WORKED;
+```
+
+<br>
+
+##### EMP 테이블에서 이름 업무 근무연차를 출력하시오
+
+```sql
+SELECT ENAME, JOB, TRUNC(MONTHS_BETWEEN(SYSDATE, HIREDATE)/12)
+FROM EMP;
+```
+
+<br>
+
+#####  EMP테이블에서 사원이름, 월금, 월급과 커미션을 더한 값을 컬럼명 실급여라고 해서 출력하시오.
+단, NULL값은 나타나지 않게 하라.
+
+```sql
+SELECT ENAME, SAL, NVL(COMM,0), SAL+NVL(COMM, 0) 실급여
+FROM EMP;
+```
+
+<br>
+
+
+##### 월급과 커미션을 함친 금액이 2,000이상인 급여를 받는 사원의 이름, 업무, 월급, 커미션, 고용날짜를 출력하시오.
+(고용 날짜는 1980-12-17 형태로 출력하시오.)
+
+```sql
+SELECT ENAME, JOB,SAL, NVL(COMM, 0), TO_CHAR(HIREDATE, 'YYYY-MM-DD') 고용일
+FROM EMP
+WHERE SAL+NVL(COMM, 0) >= 2000;
+```
+
+<br>
+
+
+
+##### DECODE 또는 CASE WHEN THEN 함수를 사용하여 다음 데이터에 따라 JOB열의 값을 기준으로 모든 사원의 등급을 표시하시오.
+
+```sql
+SELECT ENAME, JOB,
+    CASE JOB
+        WHEN 'PRESIDENT' THEN 'A'
+        WHEN 'ANALYST' THEN 'B'
+        WHEN 'MANAGER' THEN 'C'
+        WHEN 'SALESMAN' THEN 'D'
+        WHEN 'CLERK' THEN 'E'
+    END AS GRADE
+FROM EMP
+ORDER BY GRADE;
+
+SELECT ENAME, DECODE(JOB,
+        'PRESIDENT' , 'A',
+        'ANALYST' , 'B',
+        'MANAGER' , 'C',
+        'SALESMAN' , 'D',
+        'CLERK' , 'E',
+        '0')
+FROM EMP;
+```
+DECODE 는 오라클에서만 제공하는 함수이다.
+
+
+
+<br>
+---
+<br>
+
+
+
+
+##### EMPLOYEES 테이블에서 Kochhar의 급여보다 많은 사원의 정보를 사원번호,이름,담당업무,급여를 출력하라.
+
+```sql
+SELECT E.EMPLOYEE_ID, E.LAST_NAME, E.SALARY, D.DEPARTMENT_NAME
+FROM EMPLOYEES E LEFT JOIN DEPARTMENTS D
+    USING(DEPARTMENT_ID)
+WHERE E.SALARY > (SELECT SALARY FROM EMPLOYEES WHERE LAST_NAME='Kochhar');
+
+
+SELECT EMPLOYEE_ID, LAST_NAME, JOB_ID, SALARY
+FROM EMPLOYEES
+WHERE SALARY > (SELECT SALARY FROM EMPLOYEES WHERE LAST_NAME='Kochhar');
+```
+
+
+<br>
+
+
+##### EMPLOYEES 테이블에서 급여의 평균보다 적은 사원의 정보를 사원번호,이름,담당업무,급여,부서번호를 출력하여라.
+
+
+```sql
+SELECT EMPLOYEE_ID, LAST_NAME, JOB_ID, SALARY, DEPARTMENT_ID
+FROM EMPLOYEES
+WHERE SALARY < (SELECT AVG(SALARY) FROM EMPLOYEES);
+
+-- DEPARTMENT NAME 출력을 위해 조인했다.
+SELECT E.EMPLOYEE_ID, E.LAST_NAME, D.DEPARTMENT_NAME, E.SALARY, D.DEPARTMENT_ID
+FROM EMPLOYEES E LEFT JOIN DEPARTMENTS D
+    ON E.DEPARTMENT_ID=D.DEPARTMENT_ID
+WHERE E.SALARY < (SELECT AVG(SALARY) FROM EMPLOYEES)
+ORDER BY E.EMPLOYEE_ID, E.SALARY;
+
+```
+##### EMPLOYEES 테이블에서 100번 부서의 최소 급여보다 최소 급여가 많은 다른 모든 부서를 출력하라
+```sql
+SELECT DEPARTMENT_ID, MIN(SALARY)
+FROM EMPLOYEES
+GROUP BY DEPARTMENT_ID
+HAVING MIN(SALARY) > (  SELECT MIN(SALARY)
+                        FROM EMPLOYEES
+                        WHERE DEPARTMENT_ID=100);
+```
+```sql
+SELECT DEPT.DEPARTMENT_ID, DEPT.MIN
+FROM (  SELECT DEPARTMENT_ID, MIN(SALARY) AS MIN
+        FROM EMPLOYEES
+        GROUP BY DEPARTMENT_ID ) DEPT
+WHERE DEPT.MIN > (SELECT MIN(SALARY) FROM EMPLOYEES WHERE DEPARTMENT_ID=100);
+```
+
+
+<br>
+
+
+##### 업무별로 최소 급여를 받는 사원의 정보를 사원번호,이름,업무,부서번호를 출력하여라. 단 업무별로 정렬하여라.
+
+```sql
+SELECT EMPLOYEE_ID, LAST_NAME, SALARY, JOB_ID, DEPARTMENT_ID
+FROM EMPLOYEES
+WHERE (JOB_ID, SALARY) IN(  SELECT JOB_ID, MIN(SALARY)
+                            FROM EMPLOYEES
+                            GROUP BY JOB_ID )
+ORDER BY JOB_ID;
+```
+
+
+```sql
+SELECT E.EMPLOYEE_ID, E.LAST_NAME, E.JOB_ID, E.SALARY, E.DEPARTMENT_ID
+FROM EMPLOYEES E
+WHERE E.SALARY = ( SELECT MIN(SALARY)
+                   FROM EMPLOYEES G
+                   WHERE E.JOB_ID = G.JOB_ID
+                   GROUP BY JOB_ID )
+ORDER BY JOB_ID;
+```
+
+<br>
+
+
+##### EMPLOYEES 과 DEPARTMENTS 테이블에서 업무가 세일드맨 사원의 정보를 이름,업무,부서명,근무지를 출력하라.
+
+```sql
+SELECT LAST_NAME, JOB_ID, DEPARTMENT_NAME
+FROM (  SELECT LAST_NAME, JOB_ID, DEPARTMENT_ID
+        FROM EMPLOYEES
+        WHERE JOB_ID='SA_MAN') A LEFT JOIN DEPARTMENTS B
+    ON A.DEPARTMENT_ID=B.DEPARTMENT_ID;
+```
+```sql
+SELECT E.LAST_NAME, E.JOB_ID, D.DEPARTMENT_NAME, D.LOCATION_ID
+FROM EMPLOYEES E LEFT JOIN DEPARTMENTS D USING(DEPARTMENT_ID)
+WHERE E.JOB_ID='SA_MAN'
+ORDER BY E.LAST_NAME ASC;
+```
+
+
+<br>
+
+
+##### EMPLOYEES 테이블에서 가장 많은 사원을 갖는 MANAGER의 사원번호를 출력하라.
+
+```sql
+SELECT MANAGER_ID
+FROM EMPLOYEES
+GROUP BY MANAGER_ID
+HAVING COUNT(MANAGER_ID) = (SELECT MAX(COUNT(*)) FROM EMPLOYEES GROUP BY MANAGER_ID);
+```
+```sql
+SELECT MGR.EMP, MGR.CHILD
+FROM (
+    SELECT MANAGER_ID AS "EMP", COUNT(*) AS "CHILD"
+    FROM EMPLOYEES
+    GROUP BY MANAGER_ID
+    ) MGR
+WHERE MGR.CHILD=(SELECT MAX(COUNT(*)) FROM EMPLOYEES GROUP BY MANAGER_ID);
+```
+
+
+<br>
+
+
+##### EMPLOYEES  테이블에서 가장 많은 사원이 속해있는 부서번호와 사원수를 출력하라.
+
+
+```sql
+SELECT DEPARTMENT_ID, COUNT(DEPARTMENT_ID)
+FROM EMPLOYEES
+GROUP BY DEPARTMENT_ID
+HAVING COUNT(DEPARTMENT_ID) = (SELECT MAX(COUNT(DEPARTMENT_ID)) FROM EMPLOYEES GROUP BY DEPARTMENT_ID);
+```
+```sql
+SELECT DEPT.DEPARTMENT_ID, DEPT.COUNT
+FROM (
+    SELECT DEPARTMENT_ID, COUNT(*) AS "COUNT"
+    FROM EMPLOYEES
+    GROUP BY DEPARTMENT_ID
+    ) DEPT
+WHERE DEPT.COUNT=(SELECT MAX(COUNT(*)) FROM EMPLOYEES GROUP BY DEPARTMENT_ID);
+```
+
+<br>
+
+##### EMPLOYEES  테이블에서 사원번호가 123인 사원의 직업과 같고 사원번호가 192인 사원의 급여(SAL)보다 많은 사원의 사원번호, 이름, 직업, 급여를 출력하라.
+
+
+```sql
+SELECT EMPLOYEE_ID, LAST_NAME, JOB_ID, SALARY
+FROM EMPLOYEES
+WHERE JOB_ID = (SELECT JOB_ID FROM EMPLOYEES WHERE EMPLOYEE_ID=123)
+    AND SALARY > (SELECT SALARY FROM EMPLOYEES WHERE EMPLOYEE_ID=192);
+```
+
+
+<br>
+
+
+##### 직업(JOB)별로 최소 급여를 받는 사원의 정보를 사원번호, 이름, 업무, 부서명을 출력하라.
+(직업별로 내림차순 정렬)
+
+
+```sql
+SELECT E.JOB_ID, E.SALARY, E.LAST_NAME, D.DEPARTMENT_NAME
+FROM EMPLOYEES E LEFT JOIN DEPARTMENTS D USING(DEPARTMENT_ID)
+WHERE (E.JOB_ID, E.SALARY) IN (SELECT JOB_ID, MIN(SALARY) FROM EMPLOYEES GROUP BY JOB_ID);
+```
+```sql
+SELECT EMPLOYEE_ID, LAST_NAME, JOB_ID, DEPARTMENT_ID, SALARY
+FROM EMPLOYEES E
+WHERE SALARY=(
+    SELECT MIN(SALARY)
+    FROM EMPLOYEES K
+    WHERE E.JOB_ID = K.JOB_ID
+    GROUP BY JOB_ID
+)
+ORDER BY E.JOB_ID DESC;
+
+```
+
+
+<br>
+
+
+
+##### EMPLOYEES 테이블에서 50번 부서의 초소급여를 받는 사원보다 많은 급여를 받는 사원의 정보를 사원 번호, 이름, 업무, 입사일자, 급여, 부서 번호를 출력하라
+```sql
+SELECT EMPLOYEE_ID, LAST_NAME, JOB_ID, HIRE_DATE, SALARY, DEPARTMENT_ID
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID <> 50
+    AND SALARY > (SELECT MIN(SALARY) FROM EMPLOYEES WHERE DEPARTMENT_ID=50);
+
+```
