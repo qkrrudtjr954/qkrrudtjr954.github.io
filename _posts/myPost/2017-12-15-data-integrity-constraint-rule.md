@@ -7,6 +7,7 @@ tags:
   - Data Base
   - DB
   - ORACLE
+  - 무결성 제약 조건
 ---
 
 
