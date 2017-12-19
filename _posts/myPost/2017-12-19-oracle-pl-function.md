@@ -1,0 +1,47 @@
+---
+layout: post
+title: "[ORACLE] DB의 FUNCTION (함수)"
+categories:
+  - Data Base
+tags:
+  - Data Base
+  - DB
+  - ORACLE
+  - 함수
+  - FUNCTION
+  - PL/SQL
+---
+
+
+- 대부분 SELECT 절에서 사용할 시에는 주로 FUNCTION을 사용한다.
+- SELECT를 제외한 부분에서는 PROCEDURE을 사용한다.
+- FUNCTION은 INSERT, DELETE, UPDATE에서는 사용하지 않는다.
+  - FUNCTION은 리턴값을 갖지만 INSERT,DELETE, UPDATE는 리턴값이 없기 때문
+
+
+
+<br>
+
+```sql
+DROP FUNCTION FC_UPDATE_SAL;
+
+CREATE OR REPLACE FUNCTION FC_UPDATE_SAL(v_empno IN NUMBER) RETURN NUMBER
+IS
+    v_sal EMPLOYEES.SALARY%TYPE;    -- v_sal NUMBER := 0 도 가능
+BEGIN
+    SELECT SALARY * 1.1 INTO v_sal      --v_sal 에 값을 대입
+    FROM EMPLOYEES
+    WHERE EMPLOYEE_ID = v_empno;
+RETURN v_sal;
+END;
+/
+
+SELECT FC_UPDATE_SAL(100) FROM DUAL;
+VAR SALARY NUMBER;
+EXECUTE :SALARY := FC_UPDATE_SAL(100);
+PRINT SALARY;
+
+SELECT SALARY, LAST_NAME, FC_UPDATE_SAL(100)
+FROM EMPLOYEES
+WHERE EMPLOYEE_ID=100;
+```
