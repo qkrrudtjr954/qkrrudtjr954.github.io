@@ -1,17 +1,15 @@
 ---
 layout: category
-title: Data Base
+title: JDBC
 ---
 
-## 데이터 베이스
-- 데이터 베이스는 프로그래밍에 있어서 가장 중요한 기술 중에 하나입니다.
-- 대용량의 데이터을 저장하고, 저장한 데이터 중 원하는 데이터를 가져올 수 있다
-- 프로그래밍 언어로 처리할 수 있는 데이터 로직을 ***데이터 베이스*** 는 더 빠르게 수행할 수 있다.
-- ***대용량의 데이터 저장소***
+## JDBC
+- ***JDBC*** 는 ***Java Database Connectivity*** 의 약자이다.
+- java 와 Database 의 연결을 할 수 있도록 하는 API이다.
+- java 에서 데이터를 조작하고 Database에 데이터를 저장할 수 있다.
+- Database 의 데이터를 가져와서 java에서 사용이 가능하다.
 
-```sql
-SELECT * FROM DATABASE;
-```
+<br>
 <br>
 
 ### -- Post List --
