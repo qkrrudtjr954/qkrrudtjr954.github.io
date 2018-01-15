@@ -8,7 +8,6 @@ tags:
   - HTML 기본 태그
 ---
 
-# HTML (Hyper Text Markup Language)
 
 ### HTML이란?
 
