@@ -129,12 +129,8 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 
 <div class="example">
   <form class="" action="#none" method="post">
-    <textarea name="textarea" rows="10" cols="50">
-
-    </textarea>
-
+    <textarea name="textarea" rows="8" cols="50"></textarea>
     <br>
-
     <input type="submit" name="submit" value="submit">
   </form>
 </div>
@@ -146,9 +142,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 
 ```html
 <form class="" action="#none" method="post">
-  <textarea name="textarea" rows="8" cols="50">
-  </textarea>
-
+  <textarea name="textarea" rows="8" cols="50"></textarea>
   <input type="submit" name="submit" value="submit">
 </form>
 
@@ -165,6 +159,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
   <button type="button" name="button" onclick="alert('Button!')">button</button>
 </div>
 
+<br>
 
 ```html
 <button type="button" name="button" onclick="alert('Button!')">button</button>
