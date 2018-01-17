@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[javascript] Hello World"
+title: "[javascript] 변수와 연산"
 categories:
   - javascript
 tags:
