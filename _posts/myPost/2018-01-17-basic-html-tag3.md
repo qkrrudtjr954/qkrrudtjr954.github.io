@@ -26,7 +26,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 
 
 <div class="example">
-<form class="" action="#none" method="post">
+<form class="" action="#" method="post">
   <input type="checkbox" name="checkbox" value="1">Fashion
   <input type="checkbox" name="checkbox" value="2">Music
   <input type="checkbox" name="checkbox" value="3">Game
@@ -56,7 +56,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 
 
 <div class="example">
-<form action="#none">
+<form action="#">
   <input type="radio" name="radio" value="apple" checked>  Apple
   <input type="radio" name="radio" value="peach">  Peach
   <input type="radio" name="radio" value="grape">  Grape
@@ -68,7 +68,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 <br>
 
 ```html
-<form action="#none">
+<form action="#">
 	<input type="radio" name="radio" value="apple" checked>  Apple
 	<input type="radio" name="radio" value="peach">  Peach
 	<input type="radio" name="radio" value="grape">  Grape
@@ -85,7 +85,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 
 
 <div class="example">
-<form action="#none">
+<form action="#">
   <select name="car">
     <optgroup label="test1">
       <option value="1">hello1</option>
@@ -128,7 +128,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 - 글을 작성할 수 있는 공간을 제공한다.
 
 <div class="example">
-  <form class="" action="#none" method="post">
+  <form class="" action="#" method="post">
     <textarea name="textarea" rows="8" cols="50"></textarea>
     <br>
     <input type="submit" name="submit" value="submit">
@@ -141,7 +141,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 
 
 ```html
-<form class="" action="#none" method="post">
+<form class="" action="#" method="post">
   <textarea name="textarea" rows="8" cols="50"></textarea>
   <input type="submit" name="submit" value="submit">
 </form>
@@ -207,7 +207,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 - html5에서는 시간 관련 태그를 제공한다.
 
 <div class="example">
-<form action="#none">
+<form action="#">
   <fieldset>
     <legend><b>날짜 시간 관련</b></legend>
     datetime <br>
@@ -230,7 +230,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 <br>
 
 ```html
-<form action="#none">
+<form action="#">
   <fieldset>
     <legend><b>날짜 시간 관련</b></legend>
     datetime <br>
