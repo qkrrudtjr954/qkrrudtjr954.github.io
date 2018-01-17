@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "javascript의 Hello World"
+title: "[javascript] Hello World"
 categories:
   - javascript
 tags:

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "HTML 기본 태그3"
+title: "[HTML] 기본 태그3"
 categories:
   - HTML
 tags:

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "javascript의 함수"
+title: "[javascript] 함수"
 categories:
   - javascript
 tags:
