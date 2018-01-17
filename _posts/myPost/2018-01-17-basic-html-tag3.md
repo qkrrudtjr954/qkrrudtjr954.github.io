@@ -139,7 +139,10 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 </form>
 <div>
 
+
 <br>
+
+
 
 ```html
 <form class="" action="#none" method="post">
@@ -149,6 +152,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 
   <input type="submit" name="submit" value="submit">
 </form>
+
 ```
 
 
@@ -159,8 +163,9 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 <br>
 
 <div class="example">
-<button type="button" name="button" onclick="alert('Button!')">button</button>
+  <button type="button" name="button" onclick="alert('Button!')">button</button>
 </div>
+
 
 ```html
 <button type="button" name="button" onclick="alert('Button!')">button</button>
