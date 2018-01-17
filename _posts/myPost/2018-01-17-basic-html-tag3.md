@@ -128,16 +128,16 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 - 글을 작성할 수 있는 공간을 제공한다.
 
 <div class="example">
-<form class="" action="#none" method="post">
-  <textarea name="textarea" rows="10" cols="50">
+  <form class="" action="#none" method="post">
+    <textarea name="textarea" rows="10" cols="50">
 
-  </textarea>
+    </textarea>
 
-  <br>
+    <br>
 
-  <input type="submit" name="submit" value="submit">
-</form>
-<div>
+    <input type="submit" name="submit" value="submit">
+  </form>
+</div>
 
 
 <br>
@@ -146,8 +146,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
 
 ```html
 <form class="" action="#none" method="post">
-  <textarea name="textarea" rows="8" cols="80">
-
+  <textarea name="textarea" rows="8" cols="50">
   </textarea>
 
   <input type="submit" name="submit" value="submit">
