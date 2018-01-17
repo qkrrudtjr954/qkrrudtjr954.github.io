@@ -2,7 +2,7 @@
 layout: post
 title: "[javaScript] 자바스크립트의 특징"
 categories:
-  - JavaScript
+  - javascript
 tags:
   - javaScript
   - 자바 스크립트

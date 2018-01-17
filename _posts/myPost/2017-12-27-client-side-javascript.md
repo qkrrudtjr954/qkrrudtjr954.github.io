@@ -2,7 +2,7 @@
 layout: post
 title: "[javaScript] 클라이언트 사이드 자바스크립트"
 categories:
-  - JavaScript
+  - javascript
 tags:
   - javaScript
   - 자바 스크립트

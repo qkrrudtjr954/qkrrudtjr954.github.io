@@ -2,7 +2,7 @@
 layout: post
 title: "[javaScript] 자바스크립트의 기본 문법과 연산자"
 categories:
-  - JavaScript
+  - javascript
 tags:
   - javaScript
   - 자바 스크립트
