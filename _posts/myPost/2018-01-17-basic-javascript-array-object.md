@@ -41,7 +41,11 @@ world
 - 객체는 자바의 객체처럼 완전한 객체의 개념은 아니다.
 
 ```javascript
-var obj = { firstname: "kyung seok", lastname: "park", age: 26};
+var obj = {
+  firstname: "kyung seok",
+  lastname: "park",
+  age: 26
+};
 console.log(obj.firstname);
 console.log(obj.lastname);
 console.log(obj.age);
@@ -51,4 +55,22 @@ console.log(obj.age);
 kyung seok
 park
 26
+```
+
+- 객체의 내부에 **함수** 를 삽입하는 것도 가능하다.
+
+```javascript
+var person={
+  firstname: 'park',
+  lastname: 'kyung'
+  id: 1216,
+  fullName: function(){
+  	return firstname+lastname;
+  }
+};
+
+console.log(fullName);
+```
+```
+parkkyung
 ```
