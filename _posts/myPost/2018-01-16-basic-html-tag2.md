@@ -49,7 +49,7 @@ html 에서 가장 자주 사용되는 태그에 대해 공부합니다.
     <li>김똥개</li>
     <li>이기영</li>
   </ul>
-</div
+</div>
 
 ```html
 <ul style="list-style-type: square">
