@@ -45,6 +45,7 @@ function goLink() {
 	}
 }
 </script>
+</form>
 </div>
 
 
