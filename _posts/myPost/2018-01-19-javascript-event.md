@@ -109,25 +109,25 @@ function checkCookies() {
 - 포커스가 다른 곳으로 이동이 되었을때 실행된다
 
 <div class="example">
-<form action="#">
-age: <input type="text" onblur="isRegNum(this)" size="3" maxlength="3"> years old. <br>
-	write only number.
+  <form action="#">
+  age: <input type="text" onblur="isRegNum(this)" size="3" maxlength="3"> years old. <br>
+  	write only number.
 
-</form>
+  </form>  
+</div>
 <script type="text/javascript">
-/* object 가 넘어온다. * /
-function isRegNum(obj) {
-	var str = obj.value;
 
-	// 숫자가 아닌 문자가 포함된 경우를 나타내는 정규식
-	if(str.match(/[^0-9]/g)){
-		alert("문자열이 포함되어 있습니다.");
-		obj.value="";
-		return false;
-	}
+function isRegNum(obj) {
+  var str = obj.value;
+
+  // 숫자가 아닌 문자가 포함된 경우를 나타내는 정규식
+  if(str.match(/[^0-9]/g)){
+    alert("문자열이 포함되어 있습니다.");
+    obj.value="";
+    return false;
+  }
 }
 </script>
-</div>
 
 
 ```html
