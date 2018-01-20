@@ -23,17 +23,17 @@ javascript는 event를 기반으로 동작한다.
 <form action="" name="form1">
 <select name="links" onchange="goLink()">
   	<option selected disabled hidden>Choose here</option>
-	<optgroup label="portal">
-		<option value="www.google.co.kr">google</option>
-		<option value="www.naver.com">naver</option>
-		<option value="www.daum.net">Daum</option>
-	</optgroup>
+    <optgroup label="portal">
+  		<option value="https://www.google.co.kr">google</option>
+  		<option value="https://www.naver.com">Naver</option>
+  		<option value="https://www.daum.net">Daum</option>
+  	</optgroup>
 
-	<optgroup label="music">
-		<option value="www.genie.com">Genie</option>
-		<option value="www.melon.com">Melon</option>
-		<option value="www.mnet.com">Mnet</option>
-	</optgroup>
+  	<optgroup label="music">
+  		<option value="https://www.genie.co.kr">Genie</option>
+  		<option value="https://www.melon.com">Melon</option>
+  		<option value="https://www.mnet.com">Mnet</option>
+  	</optgroup>
 </select>
 
 <script type="text/javascript">
@@ -54,15 +54,15 @@ function goLink() {
 <select name="links" onchange="goLink()">
   	<option selected disabled hidden>Choose here</option>
 	<optgroup label="portal">
-		<option value="www.google.co.kr">google</option>
-		<option value="www.naver.com">naver</option>
-		<option value="www.daum.net">Daum</option>
+		<option value="https://www.google.co.kr">google</option>
+		<option value="https://www.naver.com">Naver</option>
+		<option value="https://www.daum.net">Daum</option>
 	</optgroup>
 
 	<optgroup label="music">
-		<option value="www.genie.com">Genie</option>
-		<option value="www.melon.com">Melon</option>
-		<option value="www.mnet.com">Mnet</option>
+		<option value="https://www.genie.co.kr">Genie</option>
+		<option value="https://www.melon.com">Melon</option>
+		<option value="https://www.mnet.com">Mnet</option>
 	</optgroup>
 </select>
 
@@ -210,19 +210,20 @@ function isPostNum(obj) {
 
 
 <div class="example">
-<form action="#">
-<p>입력:
-	<input type="text" onkeydown="fCopy(this.form)" onkeyup="fCopy(this.form)" name="txt" size="40">
-</p>
-<p>확인:
-	<input type="text" name="copy" size="40" readonly >
-</form>
+  <form action="#">
+    <p>입력:
+    	<input type="text" onkeydown="fCopy(this.form)" onkeyup="fCopy(this.form)" name="txt" size="40">
+    </p>
+    <p>확인:
+    	<input type="text" name="copy" size="40" readonly >
+    </p>
+  </form>
 
-<script type="text/javascript">
-function fCopy(frameObj) {
-	frameObj.elements["copy"].value = frameObj.elements["txt"].value;
-}
-</script>
+  <script type="text/javascript">
+  function fCopy(frameObj) {
+  	frameObj.elements["copy"].value = frameObj.elements["txt"].value;
+  }
+  </script>
 </div>
 
 
@@ -252,7 +253,7 @@ function fCopy(frameObj) {
 
 
 <div class="example">
-<form action="#">
+<form action="#none">
 	<p>
 		when you click the image, mousedown will activate.
 		And When you attach the mouse from image, mouseup will activate.
@@ -265,7 +266,7 @@ function fCopy(frameObj) {
 
 
 ```html
-<form action="#">
+<form action="#none">
 	<p>
 		when you click the image, mousedown will activate.
 		And When you attach the mouse from image, mouseup will activate.

@@ -20,7 +20,7 @@ javascript에서는 일정한 시간동안 주기적으로 함수를 호출할 �
     <h1>현재시간은</h1>
   </div>
 
-  <div class="container">
+  <div class="containers">
     <p id="current"></p>
   </div>
 
@@ -39,7 +39,7 @@ javascript에서는 일정한 시간동안 주기적으로 함수를 호출할 �
 <div class="title">
   <h1>현재시간은</h1>
 </div>
-<div class="container">
+<div class="containers">
   <p id="current"></p>
 </div>
 <script type="text/javascript">
