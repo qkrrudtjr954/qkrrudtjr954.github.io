@@ -28,7 +28,7 @@ javascript에서는 일정한 시간동안 주기적으로 함수를 호출할 �
     function currentTime() {
       document.getElementById('current').innerHTML = new Date();
     }
-
+    
     setInterval("currentTime()", 1000);
   </script>
 
@@ -91,21 +91,21 @@ setInterval("func()", 1000);
 
 ```html
 <form name="form1">
-전화하는 시간은
-<input type="text" size="10" name="formSec"> 입니다.
+  전화하는 시간은
+  <input type="text" size="10" name="formSec"> 입니다.
 
-<br>
-전화 요금은
-<input type="text" size="10" name="formWon"> 입니다.
+  <br>
+  전화 요금은
+  <input type="text" size="10" name="formWon"> 입니다.
 </form>
 
 <script type="text/javascript">
   var myCount = 1;
 
   function func() {
-  	document.form1.formSec.value = myCount + "초";
-  	document.form1.formWon.value = ((Math.floor(myCount/5) * 10) + 10) + "원";
-  	myCount = myCount + 1;
+    document.form1.formSec.value = myCount + "초";
+    document.form1.formWon.value = ((Math.floor(myCount/5) * 10) + 10) + "원";
+    myCount = myCount + 1;
   }
 
   setInterval("func()", 1000);

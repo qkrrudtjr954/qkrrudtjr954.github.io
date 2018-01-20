@@ -308,21 +308,21 @@ function mouseDown(obj) {
 
 ```html
 <form action="#">
-	<p>
-		<input type="image" src="https://i.imgur.com/A8eQsll.jpg" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onmousedown="mouseDown(this)">  
-	</p>
+  <p>
+    <input type="image" src="https://i.imgur.com/A8eQsll.jpg" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" onmousedown="mouseDown(this)">  
+  </p>
 </form>
 
 <script type="text/javascript">
-	function mouseOver(obj) {
-		obj.style="border:5px solid black;";
-	}
-	function mouseOut(obj) {
-		obj.style="border:5px dot red;";
-	}
-	function mouseDown(obj) {
-		obj.style="border:5px solid blue;";
-	}
+  function mouseOver(obj) {
+    obj.style="border:5px solid black;";
+  }
+  function mouseOut(obj) {
+    obj.style="border:5px dot red;";
+  }
+  function mouseDown(obj) {
+    obj.style="border:5px solid blue;";
+  }
 
 </script>
 ```
