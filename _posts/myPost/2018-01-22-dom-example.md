@@ -31,6 +31,27 @@ DOM을 활용하는 방법에 대해 몇가지 함수(기능)에 대해 학습�
 
 <br>
 
+<div class="example">
+  <div id="exam">
+    <p id="exam2">Hello World!!</p>
+  </div>
+
+  <p id="exam3"></p>
+  <p id="exam4"></p>
+
+  <button type="button" name="button" onclick="func()">Btn</button>
+
+  <script type="text/javascript">
+  function func() {
+    var innerDiv = document.getElementById('exam').innerHTML;
+    document.getElementById('exam3').innerHTML=innerDiv;
+
+    var innerP = document.getElementById('exam2').innerHTML;
+    document.getElementById('exam4').innerHTML=innerP;
+  }
+  </script>
+</div>
+
 
 
 #### Exam1.html
@@ -45,6 +66,11 @@ DOM을 활용하는 방법에 대해 몇가지 함수(기능)에 대해 학습�
     <div id="exam">
       <p id="exam2">Hello World!!</p>
     </div>
+
+    <p id="exam3"></p>
+    <p id="exam4"></p>
+
+    <button type="button" name="button" onclick="func()">Btn</button>
     <script src="Exam1.js" charset="utf-8"></script>
   </body>
 </html>
@@ -59,25 +85,17 @@ DOM을 활용하는 방법에 대해 몇가지 함수(기능)에 대해 학습�
 #### Exam1.js
 
 ```javascript
-var innerDiv = document.getElementById('exam').innerHTML;
-console.log(innerDiv);
+function func() {
+  var innerDiv = document.getElementById('exam').innerHTML;
+  document.getElementById('exam3').innerHTML=innerDiv;
 
-var innerP = document.getElementById('exam2').innerHTML;
-console.log(innerP);
+  var innerP = document.getElementById('exam2').innerHTML;
+  document.getElementById('exam4').innerHTML=innerP;
+}
 ```
 
 
 <br>
-
-
-
-#### 콘솔 결과
-
-
-```
-<p id="exam2">Hello World!!</p>
-Hello World!!
-```
 
 
 - ```innerDiv```는 ```div``` 태그 안에 있는 html 코드를 가져온다.
@@ -102,6 +120,27 @@ Hello World!!
 - 태그 안에 있는 자식 태그와 모든 노드를 전부 배열 형태로 가져온다.
 - 노드는 html 태그 뿐만 아니라 일반 텍스트도 나타낼 수 있다.
 
+<div id="intro">
+<p> Hello </p>
+<p> javascript </p>
+<p> World </p>
+<p> !!! </p>
+</div>
+
+<p id="demo"></p>
+
+<button type="button" name="button" onclick="func2()">.childNodes()</button>
+
+<script type="text/javascript">
+function func2() {
+  var myPtags = document.getElementById('intro').childNodes;
+  // div 내부에 있는 4개의 p태그와 \n 문자를 배열로 저장한다.
+
+  document.getElementById('demo').innerHTML = myPtags[1].innerHTML;
+  // div 내부에 있는 2번째 태크의 text 값을 demo에 삽입한다.
+}
+</script>
+
 <br>
 
 
@@ -124,6 +163,8 @@ Hello World!!
     </div>
 
     <p id="demo"></p>
+
+    <button type="button" name="button" onclick="func()"></button>
   </body>
   <script src="Exam2.js" charset="utf-8"></script>
 </html>
@@ -139,14 +180,17 @@ Hello World!!
 
 
 ```javascript
-var myPtags = document.getElementById('intro').childNodes;
-// div 내부에 있는 4개의 p태그와 \n 문자를 배열로 저장한다.
+function func() {
+  var myPtags = document.getElementById('intro').childNodes;
+  // div 내부에 있는 4개의 p태그와 \n 문자를 배열로 저장한다.
 
-document.getElementById('demo').innerHTML = myPtags[1].innerHTML;
-// div 내부에 있는 2번째 태크의 text 값을 demo에 삽입한다.
+  document.getElementById('demo').innerHTML = myPtags[1].innerHTML;
+  // div 내부에 있는 2번째 태크의 text 값을 demo에 삽입한다.
+}
+
 ```
 
-- 웹페이지가 로드 되면서 ```<p id="demo"></p>``` 내부를 ```myPtags[1].innerHTML```로 채운다.
+- 함수를 호출하면 ```<p id="demo"></p>``` 내부를 ```myPtags[1].innerHTML```로 채운다.
 
 <br>
 
@@ -189,8 +233,43 @@ myPtags[8] = "\n";
 - 특정 DOM 객체 내부 원하는 위치에 태그를 추가할 수 있다.  (.insertBefore)
 
 
+<div class="example">
+  <div id="exam5">
+    <p>first</p>
+    <p>second</p>
+    <p id="exam6">third</p>
+    <p>fourth</p>
+  </div>
+
+  <button type="button" name="button" onclick="append()">.appendChild()</button>
+  <button type="button" name="button" onclick="before()">.insertBefore()</button>
+</div>
+
+<script type="text/javascript">
+function append() {
+  var divDOM = document.getElementById('exam5'); // div DOM
+  var newPtag = document.createElement('p');  // 새로운 p DOM 객체를 생성
+  newPtag.innerHTML = 'fifth'; // 내부를 채운다.
+
+  divDOM.appendChild(newPtag);  // div DOM에 더한다.
+}
+
+function before() {
+  var divDOM = document.getElementById('exam5'); // div DOM
+  var ptag = document.getElementById('exam6');
+
+  var newPtag = document.createElement('p');  // 새로운 p DOM 객체를 생성
+  newPtag.innerHTML = 'fifth'; // 내부를 채운다.
+
+  divDOM.insertBefore(newPtag, ptag);  // div DOM에 더하는데 ptag 앞에 더한다.
+}
+</script>
+
+
+
 
 <br>
+
 
 
 
@@ -206,14 +285,18 @@ myPtags[8] = "\n";
     <title>Exam3</title>
   </head>
   <body>
-    <div id="exam">
+    <div id="exam5">
       <p>first</p>
       <p>second</p>
-      <p id="exam2">third</p>
+      <p id="exam6">third</p>
       <p>fourth</p>
     </div>
+
+    <button type="button" name="button" onclick="append()">.appendChild()</button>
+    <button type="button" name="button" onclick="before()">.insertBefore()</button>
+
+    <script src="Exam3.js" charset="utf-8"></script>
   </body>
-  <script src="Exam3.js" charset="utf-8"></script>
 </html>
 ```
 
@@ -227,19 +310,13 @@ myPtags[8] = "\n";
 
 
 ```javascript
-var divDOM = document.getElementById('exam'); // div DOM
-var newPtag = document.createElement('p');  // 새로운 p DOM 객체를 생성
-newPtag.innerHTML = 'fifth'; // 내부를 채운다.
+function append() {
+  var divDOM = document.getElementById('exam5'); // div DOM
+  var newPtag = document.createElement('p');  // 새로운 p DOM 객체를 생성
+  newPtag.innerHTML = 'fifth'; // 내부를 채운다.
 
-divDOM.appendChild(newPtag);  // div DOM에 더한다.
-```
-
-```
-first
-second
-third
-fourth
-fifth
+  divDOM.appendChild(newPtag);  // div DOM에 더한다.
+}
 ```
 
 
@@ -255,23 +332,18 @@ fifth
 
 
 ```javascript
-var divDOM = document.getElementById('exam'); // div DOM
-var ptag = document.getElementById('exam2');
+function before() {
+  var divDOM = document.getElementById('exam5'); // div DOM
+  var ptag = document.getElementById('exam6');
 
-var newPtag = document.createElement('p');  // 새로운 p DOM 객체를 생성
-newPtag.innerHTML = 'fifth'; // 내부를 채운다.
+  var newPtag = document.createElement('p');  // 새로운 p DOM 객체를 생성
+  newPtag.innerHTML = 'fifth'; // 내부를 채운다.
 
-divDOM.insertBefore(newPtag, ptag);  // div DOM에 더하는데 ptag 앞에 더한다.
+  divDOM.insertBefore(newPtag, ptag);  // div DOM에 더하는데 ptag 앞에 더한다.
+}
 ```
 
 
-```
-first
-second
-fifth
-third
-fourth
-```
 
 
 <br>
@@ -289,6 +361,34 @@ fourth
 - 특정 DOM 객체를 지울 수 있다.
 - 특정 DOM 객체의 자식 노드를 지울 수 있다.
 
+<div class="example">
+  <div id="exam7">
+    <p>first</p>
+    <p>second</p>
+    <p id="exam8">third</p>
+    <p>fourth</p>
+  </div>
+
+  <p id="exam9">I want to disappear</p>
+
+  <button type="button" name="button" onclick="removeChild()">.removeChild()</button>
+  <button type="button" name="button" onclick="remove()">.remove()</button>
+</div>
+
+<script type="text/javascript">
+function removeChild() {
+  var divDOM = document.getElementById('exam7');
+  var ptag = document.getElementById('exam8');
+
+  divDOM.removeChild(ptag);
+}
+
+function remove() {
+  var ptag2 = document.getElementById('exam9');
+  ptag2.remove();    
+}
+</script>
+
 
 <br>
 
@@ -304,14 +404,17 @@ fourth
     <title>Exam4</title>
   </head>
   <body>
-    <div id="exam">
+    <div id="exam7">
       <p>first</p>
       <p>second</p>
-      <p id="exam2">third</p>
+      <p id="exam8">third</p>
       <p>fourth</p>
     </div>
 
-    <p id="exam3">I want to disappear</p>
+    <p id="exam9">I want to disappear</p>
+
+    <button type="button" name="button" onclick="removeChild()">.removeChild()</button>
+    <button type="button" name="button" onclick="remove()">.remove()</button>
   </body>
   <script src="Exam4.js" charset="utf-8"></script>
 </html>
@@ -325,21 +428,19 @@ fourth
 #### Exam4.js
 
 ```javascript
-var divDOM = document.getElementById('exam');
-var ptag = document.getElementById('exam2');
+function removeChild() {
+  var divDOM = document.getElementById('exam7');
+  var ptag = document.getElementById('exam8');
 
-divDOM.removeChild(ptag);
+  divDOM.removeChild(ptag);
+}
 
-var ptag2 = document.getElementById('exam3');
-ptag2.remove();
-
+function remove() {
+  var ptag2 = document.getElementById('exam9');
+  ptag2.remove();    
+}
 ```
 
-```
-first
-second
-fourth
-```
 
 - ```.remove()``` 는 특정 DOM 객체를 삭제한다.
 - ```.removeChild()``` 는 특정 DOM 객체의 자식 노드를 삭제한다.
@@ -355,6 +456,36 @@ fourth
 
 - 특정 태그를 갖는 DOM을 배열 형태로 가져온다.
 
+<div class="example">
+  <div id="exam10">
+    <p>hello</p>
+    <p>world</p>
+  </div>
+
+  <div id="exam11">
+    <span>javascript is good!</span>
+    <div id="exam12">
+      <span>I'm inner div!</span>
+    </div>
+  </div>
+
+  <p id="demo2"></p>
+
+  <button type="button" name="button" onclick="func5()">.getElementsByTagName()</button>
+</div>
+
+<script type="text/javascript">
+function func5() {
+  // getElementsByTagName(tagname)
+  // 해당 태그 이름을 갖는 모든 태그를 가져온다.
+  var divDOMs = document.getElementsByTagName('div');
+  var obj = document.getElementById('demo2');
+
+  for (var i = 0; i < divDOMs.length; i++) {
+    obj.innerHTML = obj.innerHTML + "\n" + divDOMs[i];
+  }
+}
+</script>
 
 <br>
 
@@ -371,19 +502,23 @@ fourth
     <title>Exam5</title>
   </head>
   <body>
-    <div id="exam">
+    <div id="exam10">
       <p>hello</p>
       <p>world</p>
     </div>
 
-    <div id="exam2">
+    <div id="exam11">
       <span>javascript is good!</span>
-      <div id="exam3">
+      <div id="exam12">
         <span>I'm inner div!</span>
       </div>
     </div>
+
+    <p id="demo2"></p>
+
+    <button type="button" name="button" onclick="func5()">.getElementsByTagName()</button>
+    <script src="Exam5.js" charset="utf-8"></script>
   </body>
-  <script src="Exam5.js" charset="utf-8"></script>
 </html>
 ```
 
@@ -395,18 +530,17 @@ fourth
 #### Exam5.js
 
 ```javascript
-// getElementsByTagName(tagname)
-// 해당 태그 이름을 갖는 모든 태그를 가져온다.
-var divDOMs = document.getElementsByTagName('div');
-console.log(divDOMs[0]);
-console.log(divDOMs[1]);
-console.log(divDOMs[2]);
+function func5() {
+  // getElementsByTagName(tagname)
+  // 해당 태그 이름을 갖는 모든 태그를 가져온다.
+  var divDOMs = document.getElementsByTagName('div');
+  var obj = document.getElementById('demo2');
+
+  for (var i = 0; i < divDOMs.length; i++) {
+    obj.innerHTML = obj.innerHTML + "\n" + divDOMs[i];
+  }
+}
 ```
 
-```
-<div id="exam">...</div>
-<div id="exam2">...</div>
-<div id="exam3">...</div>
-```
 
 - 코드내 모든 ```div``` 태그를 불러온다.
