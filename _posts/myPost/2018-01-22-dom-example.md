@@ -373,16 +373,16 @@ function before() {
 
   <p id="exam9">I want to disappear</p>
 
-  <button type="button" name="button" onclick="removeChild()">.removeCh()</button>
+  <button type="button" name="button" onclick="removeChild()">.removeChild()</button>
   <button type="button" name="button" onclick="remove()">.remove()</button>
 </div>
 
 <script type="text/javascript">
-function removeCh() {
+function removeChild() {
   var divDOM = document.getElementById('exam7');
   var ptag = document.getElementById('exam8');
 
-  divDOM.removeChild(ptag);
+  divDOM.removeChild(divDOM, ptag);
 }
 
 function remove() {
@@ -434,7 +434,7 @@ function removeChild() {
   var divDOM = document.getElementById('exam7');
   var ptag = document.getElementById('exam8');
 
-  divDOM.removeChild(ptag);
+  divDOM.removeChild(divDOM, ptag);
 }
 
 function remove() {
