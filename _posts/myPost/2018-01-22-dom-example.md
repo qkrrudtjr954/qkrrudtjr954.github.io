@@ -86,9 +86,11 @@ DOM을 활용하는 방법에 대해 몇가지 함수(기능)에 대해 학습�
 
 ```javascript
 function func() {
+  // innerDiv = <p id="exam2">Hello World!!</p>
   var innerDiv = document.getElementById('exam').innerHTML;
   document.getElementById('exam3').innerHTML=innerDiv;
 
+  // innerP = Hello World!!
   var innerP = document.getElementById('exam2').innerHTML;
   document.getElementById('exam4').innerHTML=innerP;
 }
@@ -371,12 +373,12 @@ function before() {
 
   <p id="exam9">I want to disappear</p>
 
-  <button type="button" name="button" onclick="removeChild()">.removeChild()</button>
+  <button type="button" name="button" onclick="removeChild()">.removeCh()</button>
   <button type="button" name="button" onclick="remove()">.remove()</button>
 </div>
 
 <script type="text/javascript">
-function removeChild() {
+function removeCh() {
   var divDOM = document.getElementById('exam7');
   var ptag = document.getElementById('exam8');
 
@@ -537,7 +539,7 @@ function func5() {
   var obj = document.getElementById('demo2');
 
   for (var i = 0; i < divDOMs.length; i++) {
-    obj.innerHTML = obj.innerHTML + "\n" + divDOMs[i];
+    obj.innerHTML = obj.innerHTML + "<br>" + divDOMs[i];
   }
 }
 ```
