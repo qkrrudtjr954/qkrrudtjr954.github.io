@@ -12,6 +12,8 @@ tags:
 자동으로 스크롤을 하는 함수 예제
 
 <div class="exmaple">
+<button type="button" name="button" onclick="scrolls()">scroll start</button>
+
 <p>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
   eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -87,8 +89,6 @@ ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
   pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
   culpa qui officia deserunt mollit anim id est laborum.
 </p>
-
-  <button type="button" name="button" onclick="scrolls()">scroll start</button>
 </div>
 
 <script type="text/javascript">
