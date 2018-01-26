@@ -12,6 +12,8 @@ tags:
 
 javascript의 ```document.getElementById()```와 같은 객체를 선택하는 방법에 대해 알아보자.
 
+
+
 ## jQuery Selector
 
 - 자바스크립트에서 DOM을 얻어오기 위해 사용한 함수
