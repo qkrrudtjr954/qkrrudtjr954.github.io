@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[jQuery] 활용하기3'
+title: '[jQuery] 활용하기4'
 categories:
   - jQuery
 tags:
@@ -32,9 +32,12 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
   <h1>JQuery UI</h1>
   <h2>Slider</h2>
 
-  <img alt="" src="https://cnet2.cbsistatic.com/img/HFJgghjpo8khVJJRRTjO6dBo1ys=/fit-in/570x0/2011/01/18/2a55ad4f-f0f4-11e2-8c7c-d4ae52e62bcc/HTML5_Logo_550px.png" class="opaimg">
-  <img alt="" src="http://www.desartlab.com/wp-content/uploads/2015/10/css3-search-box.png" class="opaimg">
-  <img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Badge_js-strict.svg/2000px-Badge_js-strict.svg.png" class="opaimg">
+  <div style="display:flex; text-align:center;">
+
+    <img alt="" src="https://i.imgur.com/Fjp5l9M.png" class="opaimg">
+    <img alt="" src="http://www.desartlab.com/wp-content/uploads/2015/10/css3-search-box.png" class="opaimg">
+    <img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Badge_js-strict.svg/2000px-Badge_js-strict.svg.png" class="opaimg">
+  </div>
 
   <p>
     Slider의 키를 좌우로 이동시키면, 이미지의 투명도를 조정할 수 있습니다.
@@ -77,9 +80,12 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
     <h1>JQuery UI</h1>
     <h2>Slider</h2>
 
-    <img alt="" src="https://cnet2.cbsistatic.com/img/HFJgghjpo8khVJJRRTjO6dBo1ys=/fit-in/570x0/2011/01/18/2a55ad4f-f0f4-11e2-8c7c-d4ae52e62bcc/HTML5_Logo_550px.png" class="opaimg">
-    <img alt="" src="http://www.desartlab.com/wp-content/uploads/2015/10/css3-search-box.png" class="opaimg">
-    <img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Badge_js-strict.svg/2000px-Badge_js-strict.svg.png" class="opaimg">
+    <div style="display:flex; text-align:center;">
+
+      <img alt="" src="https://i.imgur.com/Fjp5l9M.png" class="opaimg">
+      <img alt="" src="http://www.desartlab.com/wp-content/uploads/2015/10/css3-search-box.png" class="opaimg">
+      <img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Badge_js-strict.svg/2000px-Badge_js-strict.svg.png" class="opaimg">
+    </div>
 
     <p>
       Slider의 키를 좌우로 이동시키면, 이미지의 투명도를 조정할 수 있습니다.

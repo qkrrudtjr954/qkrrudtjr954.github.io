@@ -19,6 +19,26 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
 - javascript를 사용하여 html 코드를 만들어 주는 방법
 
 
+<div class="example">
+  <div id="appendDiv">기본 div!</div>
+
+  <button type="button" name="button" onclick="appendText()">append</button>
+
+  <script type="text/javascript">
+    function appendText() {
+      var text1 = "<p>추가 텍스트!!</p>";  // html로 코드를 생성한다.
+      // $('div#appendDiv').append(text1); // 텍스트를 추가한다. html
+
+      var text2 = $('<p></p>').text('다른 방식의 추가 텍스트!!!');  // jquery로 코드를 생성한다.
+      // $('div#appendDiv').append(text1, text2);
+
+      var text3 = document.createElement('p');
+      text3.innerHTML = "또 다른 방식의 추가 텍스트!!!";
+      $('div#appendDiv').append(text1, text2, text3);
+    }
+  </script>
+</div>
+
 
 ```html
 <!DOCTYPE html>
@@ -65,11 +85,11 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
   <script type="text/javascript">
   $(function () {
     $('#btn1').click(function () {
-      $('#originP').before('<b>before</b>');
+      $('#originP').before('<b>before</b><br>');
     });
 
     $('#btn2').click(function () {
-      $('#originP').after('<b>after</b>');
+      $('#originP').after('<b>after</b><br>');
     });
   })
   </script>
@@ -93,11 +113,11 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
     <script type="text/javascript">
     $(function () {
       $('#btn1').click(function () {
-        $('#originP').before('<b>before</b>');
+        $('#originP').before('<b>before</b><br>');
       });
 
       $('#btn2').click(function () {
-        $('#originP').after('<b>after</b>');
+        $('#originP').after('<b>after</b><br>');
       });
     })
     </script>
@@ -113,7 +133,9 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
 
 <div class="example">
   <div id="div1" style="width:500px; height:200px; border:1px solid red; background-color:skyblue; margin-top:50px;">
-    This is div1 tag
+    This is <b>div1</b>
+
+    <br>
 
     <p id="pid">This is p tag id="id"</p>
 
@@ -121,7 +143,9 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
   </div>
 
   <div id="div2" style="width:500px; height:200px; border:1px solid red; background-color:skyblue; margin-top:50px;">
-    This is div1 tag
+    This is <b>div2</b>
+
+    <br>
 
     <p id="pid">This is p tag id="id"</p>
 
@@ -137,10 +161,10 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
       $('#btn3').click(function () {
         $('#div1').remove(); // div 전체 삭제
       });
-      $('#btn3').click(function () {
+      $('#btn4').click(function () {
         $('#div2').empty(); // div 안에 태그를 전부 삭제
       });
-      $('#btn3').click(function () {
+      $('#btn5').click(function () {
         $('.pcls').remove(); // 특정 태그를 삭제
       });
     })
@@ -184,10 +208,10 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
         $('#btn3').click(function () {
           $('#div1').remove(); // div 전체 삭제
         });
-        $('#btn3').click(function () {
+        $('#btn4').click(function () {
           $('#div2').empty(); // div 안에 태그를 전부 삭제
         });
-        $('#btn3').click(function () {
+        $('#btn5').click(function () {
           $('.pcls').remove(); // 특정 태그를 삭제
         });
       })
@@ -260,7 +284,7 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
         // 배경색을 바꾸고 글자 크기를 조정한다.
         $('p#bgP3').css({
           "background-color" : "pink",
-          "font-size" : "15px"
+          "font-size" : "30px"
         })
       })
     })
@@ -298,7 +322,7 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
           // 배경색을 바꾸고 글자 크기를 조정한다.
           $('p#bgP3').css({
             "background-color" : "pink",
-            "font-size" : "15px"
+            "font-size" : "30px"
           })
         })
       })
@@ -426,7 +450,7 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
 
       $('ul.ulist').children().click(function () {
         var choice = $('ul.ulist').children().index(this);
-        $('#q03').text('선택한 요소: '+choice);
+        $('#q03').text('선택한 index: '+choice);
       })
     })
   </script>
@@ -460,7 +484,7 @@ jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소�
 
         $('ul.ulist').children().click(function () {
           var choice = $('ul.ulist').children().index(this);
-          $('#q03').text('선택한 요소: '+choice);
+          $('#q03').text('선택한 index: '+choice);
         })
       })
     </script>
