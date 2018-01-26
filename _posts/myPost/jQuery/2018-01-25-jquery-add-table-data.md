@@ -1,10 +1,11 @@
 ---
 layout: post
-title: '[jQuery] 활용하기2'
+title: '[jQuery] 테이블 태크 추가하기'
 categories:
   - jQuery
 tags:
   - jQuery
+  - .html()
 ---
 
 jQuery를 사용하여 배열의 값을 동적으로 테이블에 추가하는 방법을 알아봅니다.

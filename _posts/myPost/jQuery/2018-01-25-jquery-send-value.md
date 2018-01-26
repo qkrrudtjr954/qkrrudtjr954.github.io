@@ -1,10 +1,12 @@
 ---
 layout: post
-title: '[jQuery] 활용하기2'
+title: '[jQuery] 값을 보내는 방법'
 categories:
   - jQuery
 tags:
   - jQuery
+  - html
+  - form
 ---
 
 jQuery를 사용하여 할 수 있는 활용 방법 예시를 간단하게 소개한다.
