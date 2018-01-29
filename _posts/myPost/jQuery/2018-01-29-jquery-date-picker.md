@@ -64,7 +64,7 @@ jquery-ui는 날짜를 선택할 수 있는 기능을 제공합니다.
                 "8월", "9월", "10월", "11월", "12월" ],
             onSelect : function(d) {
               var date = new Date(d);
-              $('#mymyyear').html(date.getFullYear());
+              $('#myyear').html(date.getFullYear());
               $('#mymonth').html(date.getMonth()+1);
               $('#myday').html(date.getDate());
               $('#mydate').html(weekday[date.getDay()]);

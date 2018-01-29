@@ -23,9 +23,9 @@ jQuery를 사용하여 테이블에 데이터를 동적으로 추가하는 방�
 <table border="1" id="list_table">
 	<colgroup>
 		<!-- column 의 설정을 할수 있다. -->
-		<col style="width:50px;">
+		<col style="width:10px;">
 		<col style="width:60px;">
-		<col style="width:80px;">
+		<col style="width:60px;">
 		<col style="width:50px;">
 	</colgroup>
 
@@ -69,10 +69,10 @@ jQuery를 사용하여 테이블에 데이터를 동적으로 추가하는 방�
 
 <table border="1" id="append_table">
 <colgroup>
-   <col style="width:70px">
-   <col style="width:200px">
-   <col style="width:300px">
-   <col style="width:200px">
+  <col style="width:5%;">
+  <col style="width:30%;">
+  <col style="width:30%;">
+  <col style="width:30%;">
 </colgroup>
 
 <thead>
@@ -86,9 +86,9 @@ jQuery를 사용하여 테이블에 데이터를 동적으로 추가하는 방�
 
 <tbody>
    <tr>
-      <td><input type="text" id="add_no"></td>
-      <td><input type="text" id="add_name"></td>
-      <td><input type="text" id="add_birth"></td>
+      <td><input type="text" id="add_no" style="margin:0;padding:10px 0px;"></td>
+      <td><input type="text" id="add_name" style="margin:0;padding:10px 0px;"></td>
+      <td><input type="text" id="add_birth" style="margin:0;padding:10px 0px;"></td>
       <td><button type="button" id="append_row">데이터 추가</button></td>
    </tr>
 </tbody>
