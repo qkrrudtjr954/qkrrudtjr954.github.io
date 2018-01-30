@@ -21,7 +21,7 @@ tags:
 
 
 ```html
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="https://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
     new daum.Postcode({
         oncomplete: function(data) {
@@ -38,7 +38,7 @@ tags:
 
 ```html
 <!--autoload=false 파라미터를 이용하여 자동으로 로딩되는 것을 막습니다.-->
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
+<script src="https://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
 <script>
     //load함수를 이용하여 core스크립트의 로딩이 완료된 후, 우편번호 서비스를 실행합니다.
     daum.postcode.load(function(){
@@ -63,7 +63,7 @@ tags:
 <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
 <span id="guide" style="color:#999"></span>
 
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="https://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
@@ -127,7 +127,7 @@ tags:
 <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
 <span id="guide" style="color:#999"></span>
 
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="https://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {

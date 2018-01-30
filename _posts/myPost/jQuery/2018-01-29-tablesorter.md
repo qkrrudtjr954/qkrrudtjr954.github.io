@@ -18,8 +18,8 @@ javascript ```tablesorter.js``` 를 추가하여 자동으로 정렬을 할 수 
 
 
 ```html
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
 ```
 
 
@@ -60,7 +60,7 @@ javascript ```tablesorter.js``` 를 추가하여 자동으로 정렬을 할 수 
   </tbody>
 </table>
 
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function () {
     $('#sampleTable').tablesorter();
@@ -79,7 +79,7 @@ javascript ```tablesorter.js``` 를 추가하여 자동으로 정렬을 할 수 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!-- file import -->
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
 
 <style type="text/css">
 	#sampleTable td:nth-of-type(3){

@@ -21,9 +21,9 @@ jquery-ui는 날짜를 선택할 수 있는 기능을 제공합니다.
 
 
 ```html
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 ```
 
 ## 예제
@@ -44,6 +44,7 @@ jquery-ui는 날짜를 선택할 수 있는 기능을 제공합니다.
   <p id="myday"></p>
   요일:
   <p id="mydate"></p>
+
 
   <script type="text/javascript">
   var weekday = new Array(7);
@@ -81,9 +82,7 @@ jquery-ui는 날짜를 선택할 수 있는 기능을 제공합니다.
 <meta charset="UTF-8">
 <title>jQuery Calendar</title>
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css" />
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+cc
 </head>
 <body>
 	<h1>JQuery 달력</h1>
