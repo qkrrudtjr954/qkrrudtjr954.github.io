@@ -1,11 +1,15 @@
 ---
 layout: post
-title: [Servlet] 서블릿이란?
+title: '[Servlet] 서블릿이란?'
 categories:
   - servlet
 tags:
   - servlet
 ---
+
+servlet의 개념과 servlet의 간단한 예제를 설명합니다.
+
+
 
 # Servlet 이란?
 
