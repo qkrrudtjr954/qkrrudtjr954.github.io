@@ -10,6 +10,8 @@ tags:
 ---
 
 
+http://gangzzang.tistory.com/entry/JSP-%EA%B8%B0%EB%B3%B8-%EA%B0%9D%EC%B2%B4-out-pageContext-application-page
+
 jsp는 내부적으로 포함하고 있는 내장 객체를 가지고 있다. 이렇게 정의된 내장 객체는 직접적인 선언없이 바로 접근이 가능하다.
 내장 객체의 종류와 사용법을 학습합니다.
 
