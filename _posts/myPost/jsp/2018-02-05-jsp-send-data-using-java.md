@@ -78,8 +78,11 @@ In classic ASP, application object is used to store connection strings. It's a g
 <p>
 Session object:
 
-Session object is used to store state specific information per client basis. It is specific to particular user. Session data persists for the duration of user session you can store session's data on web server in different ways. Session state can be configured using the <session State> section in the application's web.config file.
+Session object is used to store state specific information per client basis. It is specific to particular user. Session data persists for the duration of user session you can store session's data on web server in different ways. Session state can be configured using the \<session State\> section in the application's web.config file.
 </p>
+
+
+
 
 1. requset를 사용하면  ```pageContext.forward()``` 에서는 페이지 전환을 사용해도 데이터를 모두 가져갈 수 있지만, ```response.sendRedirect()```을 사용하면 데이터를 전송할 수 없다.
 
@@ -120,7 +123,7 @@ null
 
 
 |        -     | pageContext.forward() | response.sendRedirect() |
-| :---------- | :-------------------- | :---------------------- |
+| :----------: | :--------------------: | :----------------------: |
 | session     | 전송 가능              | 전송 가능                |
 | application | 전송 가능              | 전송 가능                |
 | request     | 전송 가능              | 전송 불가능              |
