@@ -102,7 +102,7 @@ location.href = "/action.jsp?age="+age+"&name="+name;
 
 #### 3-1. forward
 
-```html
+```jsp
 <%@page import="java.net.URLEncoder"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
