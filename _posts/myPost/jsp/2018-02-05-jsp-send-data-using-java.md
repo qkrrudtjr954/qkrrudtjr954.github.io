@@ -1,6 +1,6 @@
 ---
 layout: post
-title: '[jsp] 페이지 전환의 방법'
+title: '[jsp] 자바를 사용한 데이터 전송'
 categories:
   - jsp
 tags:
@@ -119,8 +119,8 @@ null
 
 
 
-|             | pageContext.forward() | response.sendRedirect() |
+|        -     | pageContext.forward() | response.sendRedirect() |
 | :---------- | :-------------------- | :---------------------- |
-| session     | 전송 가능                 | 전송 가능                   |
-| application | 전송 가능                 | 전송 가능                   |
-| request     | 전송 가능                 | 전송 **불가능**              |
+| session     | 전송 가능              | 전송 가능                |
+| application | 전송 가능              | 전송 가능                |
+| request     | 전송 가능              | 전송 불가능              |
