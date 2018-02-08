@@ -1,7 +1,25 @@
+---
+layout: post
+title: '[jstl] jsp tag'
+categories:
+  - jstl
+tags:
+  - jstl
+  - jsp tag
+  - jsp
+---
+
+
+jsp 태그는 jsp 페이지 위에서 scriptlet으로 사용되는 자바 코드를 줄이고 태그 코드로 사용할 수 있도록 많은 지원을 해주는 태그다.
+
+
+
 # jsp tag
 
 
-- 사용빈도는 낮지만 고급 태그로 많이 사용딘다.
+- 사용빈도는 낮지만 고급 태그로 많이 사용한다.
+- 자바코드를 줄일 수 있는 유용한 기능을 제공한다.
+- scriptlet으로 해결할 수 있는 코드를 태그로 처리할 수 있도록 기능을 지원한다.
 
 
 
