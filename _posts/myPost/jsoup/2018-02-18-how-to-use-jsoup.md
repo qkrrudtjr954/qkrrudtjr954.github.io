@@ -11,9 +11,6 @@ tags:
 
 
 
-# jsoup을 활용한 외부 html태그 파싱하기
-
-
 
 jsoup은 url을 통해 외부 html 소스에서 원하는 요소를 파싱할 수 있는 api 입니다.
 
@@ -36,7 +33,7 @@ jsoup을 사용하면 외부 사이트에서 원하는 정보 ( 영화 순위, �
 
 
 
-
+<br>
 
 ## Get Started
 
@@ -49,7 +46,7 @@ jsoup을 사용하기 위해서는 jsoup 라이브러리 (.jar파일) 를 추가
 
 
 
-
+<br>
 
 ## How To Use
 
@@ -60,7 +57,7 @@ jsoup의 사용 순서는 다음과 같다.
 3. ***셀렉터를 사용하여 값을 가져온다***
 4. ***끝!***
 
-
+<br>
 
 #### 1. 웹페이지의 소스를 전부 가져온다.
 
@@ -71,14 +68,14 @@ Document doc = Jsoup.connect("http://www.cgv.co.kr/movies/?ft=0").get();
 - Jsoup 객체를 통해 파싱하고 싶은 웹페이지와 연결한다.
 - ```.get()``` 함수를 사용하여 html 코드를 전부 가져와 ```Document``` 타입으로 만든다.
 
-
+<br>
 
 
 #### 2. 원하는 요소의 속성 및 태그를 확인한다.
 
 - cgv 홈페이지에 있는 영화 정보를 갖고 오고 싶다.
 
-
+<br>
 
 #### 3. 셀렉터를 사용하여 값을 가져온다.
 
@@ -91,6 +88,8 @@ Elements title = doc.select("div.dox-contents strong.title");
 - 해당 html 소스에서 ***css selector*** 문법을 사용하여 원하는 ***element*** 를 가져온다.
 
 
+
+<br>
 
 #### 4. 끝!
 
